@@ -1,0 +1,75 @@
+# Model weights & checkpoints
+*.pt
+*.pth
+*.onnx
+*.engine
+
+# Compressed archives
+*.tar.gz
+*.zip
+*.rar
+*.7z
+
+# Video files
+*.mp4
+*.avi
+*.mkv
+
+# Data folders
+data/
+train_outputs/
+runs/
+outputs/
+results/
+
+# Temp / old
+temp/
+old/
+
+# Claude / AI assistant
+.claude/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+build/
+dist/
+.eggs/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Legacy notebooks
+notebooks/backbones/rbg-code-old.ipynb
+notebooks/early_stage/Early_Fusion_old.ipynb
+notebooks/eda/EDA.txt
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+
+# Demo artifacts
+src/Demo/scrcpy-*/
+src/Demo/uploads/
+src/Demo/models/
+src/Demo/*.exe
+src/Demo/FlightRecord*
+src/Demo/flight_*
+src/Demo/gps_track*
+src/Demo/*.ipynb
+src/Demo/check_log.sh
+src/Demo/.gitignore
+
+# Paper (kept private)
+paper/graduation_thesis/
+paper/research_paper/
+paper/FinalReportTemplate/
+paper/docs/
+paper/*.pdf

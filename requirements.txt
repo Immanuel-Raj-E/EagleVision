@@ -1,0 +1,9 @@
+torch>=2.0
+torchvision>=0.15
+ultralytics>=8.1
+numpy>=1.24
+opencv-python-headless>=4.8
+matplotlib>=3.7
+pandas>=2.0
+ensemble-boxes>=1.0
+Pillow>=10.0
