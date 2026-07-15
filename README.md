@@ -9,8 +9,8 @@
 
 Multi-modal person detection system that fuses **RGB and thermal imagery** from drones for search-and-rescue operations. We systematically compare three fusion strategies (early, mid, late) built on dual YOLOv8-nano backbones and demonstrate that **mid-stage progressive fusion** achieves the best precision-recall balance on the [RGBTDronePerson](https://github.com/RGBTDronePerson) benchmark. The system includes real-time GPS geo-localization of detected persons using drone telemetry.
 
-> **Thesis (PDF):** Available upon request
-> **Reference paper:** Zhang et al., *"Drone-based RGBT tiny person detection"*, ISPRS J. Photogrammetry & Remote Sensing, 2023 — [DOI](https://doi.org/10.1016/j.isprsjprs.2023.08.016)
+> **Paper (PDF):** [`paper/Paper.pdf`](paper/Paper.pdf)
+> **Reference:** Zhang et al., *"Drone-based RGBT tiny person detection"*, ISPRS J. Photogrammetry & Remote Sensing, 2023 — [DOI](https://doi.org/10.1016/j.isprsjprs.2023.08.016)
 
 ---
 
@@ -118,13 +118,31 @@ Tested on the demo web application with a single RGB-Thermal video pair:
 
 ---
 
+## Model Weights
+
+Pre-trained ONNX model is hosted on Hugging Face (not included in this repo due to file size):
+
+| Model | Size | Dataset | Download |
+|-------|------|---------|----------|
+| Progressive Mid-Fusion (ONNX, FP32) | ~25 MB | RGBTDronePerson + NTUT | [Hugging Face](https://huggingface.co/hiungn/RGBT-Fusion-Drone-SAR) |
+
+```bash
+# Download and place in src/Demo/models/
+mkdir -p src/Demo/models
+# Download fusion_progressive_s2.onnx from the link above into src/Demo/models/
+```
+
+> Update the link above once the Hugging Face repository is ready.
+
+---
+
 ## Quick Start
 
 ### Option 1: Docker (demo only, no GPU required)
 
 ```bash
-git clone https://github.com/hiungn/RGB-Thermal-Fusion-Based-Human-Detection-and-Geo-Localization-Using-Drones-for-Search-and-Rescue.git
-cd RGB-Thermal-Fusion-Based-Human-Detection-and-Geo-Localization-Using-Drones-for-Search-and-Rescue
+git clone https://github.com/hiungn/RGBT-Fusion-Drone-SAR.git
+cd RGBT-Fusion-Drone-SAR
 
 docker build -t rgbt-fusion .
 # Place your ONNX model in src/Demo/models/ first

@@ -67,9 +67,11 @@ src/Demo/*.ipynb
 src/Demo/check_log.sh
 src/Demo/.gitignore
 
-# Paper (kept private)
+# Paper (kept private — only Paper.pdf is public)
 paper/graduation_thesis/
 paper/research_paper/
 paper/FinalReportTemplate/
 paper/docs/
-paper/*.pdf
+paper/figure/
+paper/Graduation_Thesis.pdf
+paper/Slide.pdf
