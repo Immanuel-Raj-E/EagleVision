@@ -124,15 +124,13 @@ Pre-trained ONNX model is hosted on Hugging Face (not included in this repo due 
 
 | Model | Size | Dataset | Download |
 |-------|------|---------|----------|
-| Progressive Mid-Fusion (ONNX, FP32) | ~25 MB | RGBTDronePerson + NTUT | [Hugging Face](https://huggingface.co/hiungn/RGBT-Fusion-Drone-SAR) |
+| Progressive Mid-Fusion (ONNX, FP32) | ~30 MB | RGBTDronePerson + NTUT | [Hugging Face](https://huggingface.co/hiuS04/RGBT-Fusion-Drone-SAR) |
 
 ```bash
 # Download and place in src/Demo/models/
 mkdir -p src/Demo/models
-# Download fusion_progressive_s2.onnx from the link above into src/Demo/models/
+hf download hiuS04/RGBT-Fusion-Drone-SAR fusion_progressive_finetune.onnx --local-dir src/Demo/models
 ```
-
-> Update the link above once the Hugging Face repository is ready.
 
 ---
 
