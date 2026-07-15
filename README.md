@@ -10,7 +10,7 @@
 Multi-modal person detection system that fuses **RGB and thermal imagery** from drones for search-and-rescue operations. We systematically compare three fusion strategies (early, mid, late) built on dual YOLOv8-nano backbones and demonstrate that **mid-stage progressive fusion** achieves the best precision-recall balance on the [RGBTDronePerson](https://github.com/RGBTDronePerson) benchmark. The system includes real-time GPS geo-localization of detected persons using drone telemetry.
 
 > **Paper (PDF):** [`paper/Paper.pdf`](paper/Paper.pdf)
-> **Reference:** Zhang et al., *"Drone-based RGBT tiny person detection"*, ISPRS J. Photogrammetry & Remote Sensing, 2023 — [DOI](https://doi.org/10.1016/j.isprsjprs.2023.08.016)
+> **Reference:** Zhang et al., *"Drone-based RGBT tiny person detection"*, ISPRS J. Photogrammetry & Remote Sensing, 2023 - [DOI](https://doi.org/10.1016/j.isprsjprs.2023.08.016)
 
 ---
 
@@ -22,7 +22,7 @@ Multi-modal person detection system that fuses **RGB and thermal imagery** from 
 <p align="center">
   <img src="docs/demo.gif" alt="Detection demo" width="720">
   <br>
-  <em>Real-time person detection from drone footage with GPS overlay (placeholder — see Quick Start to run locally)</em>
+  <em>Real-time person detection from drone footage with GPS overlay (placeholder - see Quick Start to run locally)</em>
 </p>
 
 ---
@@ -49,9 +49,9 @@ We compare three fusion strategies, each using two frozen YOLOv8-nano backbones 
 
 Three mid-stage variants were evaluated:
 
-- **Baseline** — Concat + Conv1x1 reduction
-- **Progressive** — Three-stage curriculum: frozen backbones → gradual unfreezing with increasing LR
-- **QFDet** — Quality-aware fusion with pool-upsample and cross-modality attention weights
+- **Baseline** - Concat + Conv1x1 reduction
+- **Progressive** - Three-stage curriculum: frozen backbones -> gradual unfreezing with increasing LR
+- **QFDet** - Quality-aware fusion with pool-upsample and cross-modality attention weights
 
 ---
 
@@ -76,14 +76,14 @@ After fine-tuning the best model on custom drone data (NTUT + local footage):
 | RGBTDronePerson (before) | 59.04 | 20.04 | 68.2 | 54.4 |
 | Custom drone test (after) | **85.07** | **41.32** | **89.4** | **78.5** |
 
-### Benchmark — Inference Speed
+### Benchmark - Inference Speed
 
 Tested on the demo web application with a single RGB-Thermal video pair:
 
 | Backend | Hardware | FPS | VRAM | Notes |
 |---------|----------|:---:|:----:|-------|
 | ONNX Runtime (FP32) | RTX 4070 Super 12GB | ~45 | 1.2 GB | Recommended for demo |
-| ONNX Runtime (FP32) | CPU (i7-13700K) | ~8 | — | No GPU required |
+| ONNX Runtime (FP32) | CPU (i7-13700K) | ~8 | - | No GPU required |
 | PyTorch (FP32) | RTX 4070 Super 12GB | ~30 | 3.8 GB | Full mid-fusion model |
 
 > Inference includes preprocessing, dual-backbone forward pass, fusion, NMS, and GPS estimation.
@@ -189,8 +189,8 @@ jupyter notebook notebooks/mid_stage/Mid_Progressive_Stream2.ipynb
 ## Training Details
 
 - **Base model:** YOLOv8-nano (3.2M parameters) with dual frozen backbones
-- **Optimizer:** AdamW with warmup + cosine annealing (LR: 1e-5 → 5e-4)
-- **Progressive unfreezing:** Stage 1 (frozen, 5 ep) → Stage 2 (unfreeze 3 layers, 10 ep) → Stage 3 (full unfreeze, cosine decay, patience=2)
+- **Optimizer:** AdamW with warmup + cosine annealing (LR: 1e-5 -> 5e-4)
+- **Progressive unfreezing:** Stage 1 (frozen, 5 ep) -> Stage 2 (unfreeze 3 layers, 10 ep) -> Stage 3 (full unfreeze, cosine decay, patience=2)
 - **Augmentation:** Horizontal flip (p=0.5), Gaussian blur on RGB only (p=0.5)
 - **Loss:** YOLOv8 detection loss (box + cls + DFL), normalized per batch
 - **Evaluation:** COCO-style AP with 101-point interpolation, IoU [0.5:0.05:0.95]
