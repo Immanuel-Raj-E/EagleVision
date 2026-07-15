@@ -31,7 +31,10 @@ FusionDetector = None
 def _import_detector():
     global FusionDetector
     if FusionDetector is None:
-        from src.Demo.inference import FusionDetector as _FD
+        try:
+            from src.Demo.inference import FusionDetector as _FD
+        except ModuleNotFoundError:
+            from inference import FusionDetector as _FD
         FusionDetector = _FD
 
 # =====================================================================
