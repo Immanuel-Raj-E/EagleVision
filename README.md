@@ -247,7 +247,7 @@ If you find this work useful, please cite:
 }
 ```
 
-Reference paper:
+Reference paper (full reference list in the [paper](paper/Paper.pdf)):
 
 ```bibtex
 @article{zhang2023drone,
