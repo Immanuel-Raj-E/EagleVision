@@ -1,0 +1,4 @@
+frame_id,original_frame_number,timestamp_seconds,fps,sharpness_score,brightness_score,contrast_score,motion_score,similarity_score,selection_score,reason_for_selection
+frame_000001,0,0.000,30.00,276.03,0.6073,0.0922,1.0000,0.0000,0.8540,initial_video_anchor
+frame_000002,60,2.000,30.00,345.91,0.6075,0.0948,0.0061,0.9241,0.2983,periodic_coverage_keepalive
+frame_000003,120,4.000,30.00,348.10,0.6131,0.0984,0.0580,0.9735,0.2949,periodic_coverage_keepalive

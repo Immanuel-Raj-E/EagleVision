@@ -1,0 +1,1445 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>SAR Mission Survivor Triage Map</name>
+    <description>Confidence-ranked aerial SAR survivor geolocations with dual evidence imagery</description>
+    <!-- Style Definitions -->
+    <Style id="criticalStyle">
+      <IconStyle>
+        <color>ff4639e6</color>
+        <scale>1.3</scale>
+        <Icon><href>http://maps.google.com/mapfiles/kml/shapes/target.png</href></Icon>
+      </IconStyle>
+    </Style>
+    <Style id="moderateStyle">
+      <IconStyle>
+        <color>ff61a2f4</color>
+        <scale>1.1</scale>
+        <Icon><href>http://maps.google.com/mapfiles/kml/shapes/caution.png</href></Icon>
+      </IconStyle>
+    </Style>
+    <Style id="lowStyle">
+      <IconStyle>
+        <color>ff6ac4e9</color>
+        <scale>0.9</scale>
+        <Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon>
+      </IconStyle>
+    </Style>
+    <Placemark>
+      <name>Survivor #2 [CRITICAL_RESCUE]</name>
+      <description><![CDATA[<h3>Track #2 - CRITICAL_RESCUE</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.752<br/><b>Confidence:</b> 84%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.52m<br/><b>Coordinates:</b> 27.717325, 85.324597</p>]]></description>
+      <styleUrl>#criticalStyle</styleUrl>
+      <Point>
+        <coordinates>85.3245971,27.7173245,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #4 [CRITICAL_RESCUE]</name>
+      <description><![CDATA[<h3>Track #4 - CRITICAL_RESCUE</h3><p><b>Class:</b> animal<br/><b>Triage Score:</b> 0.752<br/><b>Confidence:</b> 83%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.46m<br/><b>Coordinates:</b> 27.717247, 85.324282</p>]]></description>
+      <styleUrl>#criticalStyle</styleUrl>
+      <Point>
+        <coordinates>85.3242816,27.7172465,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #6 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #6 - MODERATE_SEARCH</h3><p><b>Class:</b> animal<br/><b>Triage Score:</b> 0.749<br/><b>Confidence:</b> 83%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.5m<br/><b>Coordinates:</b> 27.717272, 85.324484</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.324484,27.7172716,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #65 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #65 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.747<br/><b>Confidence:</b> 82%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.47m<br/><b>Coordinates:</b> 27.717265, 85.324387</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3243867,27.7172646,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #5 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #5 - MODERATE_SEARCH</h3><p><b>Class:</b> animal<br/><b>Triage Score:</b> 0.746<br/><b>Confidence:</b> 82%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.5m<br/><b>Coordinates:</b> 27.717225, 85.324400</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3244,27.7172249,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #48 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #48 - MODERATE_SEARCH</h3><p><b>Class:</b> animal<br/><b>Triage Score:</b> 0.743<br/><b>Confidence:</b> 81%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.75m<br/><b>Coordinates:</b> 27.717179, 85.324942</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3249421,27.7171793,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #73 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #73 - MODERATE_SEARCH</h3><p><b>Class:</b> animal<br/><b>Triage Score:</b> 0.741<br/><b>Confidence:</b> 80%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.57m<br/><b>Coordinates:</b> 27.717259, 85.324755</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3247546,27.7172589,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #12 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #12 - MODERATE_SEARCH</h3><p><b>Class:</b> animal<br/><b>Triage Score:</b> 0.738<br/><b>Confidence:</b> 79%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.69m<br/><b>Coordinates:</b> 27.717136, 85.324873</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3248731,27.7171363,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #108 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #108 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.734<br/><b>Confidence:</b> 78%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.51m<br/><b>Coordinates:</b> 27.717301, 85.324644</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3246442,27.7173007,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #86 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #86 - MODERATE_SEARCH</h3><p><b>Class:</b> animal<br/><b>Triage Score:</b> 0.732<br/><b>Confidence:</b> 77%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.56m<br/><b>Coordinates:</b> 27.717209, 85.324756</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3247563,27.7172085,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #109 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #109 - MODERATE_SEARCH</h3><p><b>Class:</b> animal<br/><b>Triage Score:</b> 0.732<br/><b>Confidence:</b> 77%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.65m<br/><b>Coordinates:</b> 27.717227, 85.324849</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3248488,27.7172271,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #1 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #1 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.73<br/><b>Confidence:</b> 76%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.42m<br/><b>Coordinates:</b> 27.717227, 85.324176</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3241759,27.7172273,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #7 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #7 - MODERATE_SEARCH</h3><p><b>Class:</b> animal<br/><b>Triage Score:</b> 0.73<br/><b>Confidence:</b> 76%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.54m<br/><b>Coordinates:</b> 27.717228, 85.324471</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3244709,27.717228,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #30 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #30 - MODERATE_SEARCH</h3><p><b>Class:</b> animal<br/><b>Triage Score:</b> 0.73<br/><b>Confidence:</b> 76%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.55m<br/><b>Coordinates:</b> 27.717186, 85.324745</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3247452,27.7171856,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #17 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #17 - MODERATE_SEARCH</h3><p><b>Class:</b> animal<br/><b>Triage Score:</b> 0.728<br/><b>Confidence:</b> 75%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.52m<br/><b>Coordinates:</b> 27.717200, 85.324711</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3247106,27.7172002,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #166 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #166 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.728<br/><b>Confidence:</b> 76%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.77m<br/><b>Coordinates:</b> 27.717284, 85.324958</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3249581,27.7172842,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #9 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #9 - MODERATE_SEARCH</h3><p><b>Class:</b> animal<br/><b>Triage Score:</b> 0.727<br/><b>Confidence:</b> 75%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.68m<br/><b>Coordinates:</b> 27.717131, 85.324864</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3248643,27.7171313,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #29 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #29 - MODERATE_SEARCH</h3><p><b>Class:</b> animal<br/><b>Triage Score:</b> 0.727<br/><b>Confidence:</b> 75%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.57m<br/><b>Coordinates:</b> 27.717209, 85.324764</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3247644,27.7172087,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #82 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #82 - MODERATE_SEARCH</h3><p><b>Class:</b> animal<br/><b>Triage Score:</b> 0.727<br/><b>Confidence:</b> 75%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.6m<br/><b>Coordinates:</b> 27.717216, 85.324797</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3247968,27.7172162,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #104 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #104 - MODERATE_SEARCH</h3><p><b>Class:</b> animal<br/><b>Triage Score:</b> 0.727<br/><b>Confidence:</b> 75%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.58m<br/><b>Coordinates:</b> 27.717200, 85.324777</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3247771,27.7172004,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #119 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #119 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.727<br/><b>Confidence:</b> 75%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.67m<br/><b>Coordinates:</b> 27.717317, 85.324832</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3248324,27.7173167,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #77 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #77 - MODERATE_SEARCH</h3><p><b>Class:</b> animal<br/><b>Triage Score:</b> 0.724<br/><b>Confidence:</b> 74%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.56m<br/><b>Coordinates:</b> 27.717226, 85.324748</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3247485,27.7172256,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #14 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #14 - MODERATE_SEARCH</h3><p><b>Class:</b> animal<br/><b>Triage Score:</b> 0.723<br/><b>Confidence:</b> 74%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.69m<br/><b>Coordinates:</b> 27.717178, 85.324881</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3248814,27.7171781,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #50 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #50 - MODERATE_SEARCH</h3><p><b>Class:</b> animal<br/><b>Triage Score:</b> 0.723<br/><b>Confidence:</b> 74%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.67m<br/><b>Coordinates:</b> 27.717212, 85.324863</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3248633,27.7172121,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #26 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #26 - MODERATE_SEARCH</h3><p><b>Class:</b> animal<br/><b>Triage Score:</b> 0.721<br/><b>Confidence:</b> 73%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.56m<br/><b>Coordinates:</b> 27.717225, 85.324746</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3247461,27.7172253,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #41 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #41 - MODERATE_SEARCH</h3><p><b>Class:</b> animal<br/><b>Triage Score:</b> 0.721<br/><b>Confidence:</b> 73%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.56m<br/><b>Coordinates:</b> 27.717245, 85.324751</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3247511,27.717245,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #71 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #71 - MODERATE_SEARCH</h3><p><b>Class:</b> animal<br/><b>Triage Score:</b> 0.721<br/><b>Confidence:</b> 73%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.64m<br/><b>Coordinates:</b> 27.717206, 85.324832</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3248315,27.7172064,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #87 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #87 - MODERATE_SEARCH</h3><p><b>Class:</b> animal<br/><b>Triage Score:</b> 0.721<br/><b>Confidence:</b> 73%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.56m<br/><b>Coordinates:</b> 27.717208, 85.324749</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3247487,27.7172079,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #154 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #154 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.721<br/><b>Confidence:</b> 73%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.79m<br/><b>Coordinates:</b> 27.717253, 85.324987</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3249867,27.7172533,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #10 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #10 - MODERATE_SEARCH</h3><p><b>Class:</b> animal<br/><b>Triage Score:</b> 0.718<br/><b>Confidence:</b> 72%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.7m<br/><b>Coordinates:</b> 27.717112, 85.324881</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3248806,27.717112,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #101 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #101 - MODERATE_SEARCH</h3><p><b>Class:</b> animal<br/><b>Triage Score:</b> 0.718<br/><b>Confidence:</b> 72%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.56m<br/><b>Coordinates:</b> 27.717222, 85.324755</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3247549,27.7172219,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #125 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #125 - MODERATE_SEARCH</h3><p><b>Class:</b> animal<br/><b>Triage Score:</b> 0.717<br/><b>Confidence:</b> 72%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.56m<br/><b>Coordinates:</b> 27.717253, 85.324748</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3247477,27.7172529,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #44 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #44 - MODERATE_SEARCH</h3><p><b>Class:</b> animal<br/><b>Triage Score:</b> 0.713<br/><b>Confidence:</b> 70%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.68m<br/><b>Coordinates:</b> 27.717186, 85.324873</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3248728,27.7171861,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #56 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #56 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.713<br/><b>Confidence:</b> 71%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.47m<br/><b>Coordinates:</b> 27.717282, 85.324595</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3245953,27.7172818,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #93 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #93 - MODERATE_SEARCH</h3><p><b>Class:</b> animal<br/><b>Triage Score:</b> 0.713<br/><b>Confidence:</b> 71%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.68m<br/><b>Coordinates:</b> 27.717243, 85.324871</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3248705,27.7172426,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #174 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #174 - MODERATE_SEARCH</h3><p><b>Class:</b> animal<br/><b>Triage Score:</b> 0.713<br/><b>Confidence:</b> 70%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.65m<br/><b>Coordinates:</b> 27.717223, 85.324848</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3248482,27.7172235,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #160 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #160 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.711<br/><b>Confidence:</b> 70%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.76m<br/><b>Coordinates:</b> 27.717012, 85.324901</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3249006,27.7170119,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #33 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #33 - MODERATE_SEARCH</h3><p><b>Class:</b> animal<br/><b>Triage Score:</b> 0.71<br/><b>Confidence:</b> 70%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.7m<br/><b>Coordinates:</b> 27.717143, 85.324887</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3248872,27.7171425,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #11 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #11 - MODERATE_SEARCH</h3><p><b>Class:</b> animal<br/><b>Triage Score:</b> 0.709<br/><b>Confidence:</b> 69%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.71m<br/><b>Coordinates:</b> 27.717111, 85.324894</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3248936,27.717111,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #21 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #21 - MODERATE_SEARCH</h3><p><b>Class:</b> animal<br/><b>Triage Score:</b> 0.709<br/><b>Confidence:</b> 69%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.67m<br/><b>Coordinates:</b> 27.717153, 85.324863</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3248632,27.7171529,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #16 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #16 - MODERATE_SEARCH</h3><p><b>Class:</b> animal<br/><b>Triage Score:</b> 0.708<br/><b>Confidence:</b> 69%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.59m<br/><b>Coordinates:</b> 27.717220, 85.324778</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3247783,27.7172199,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #23 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #23 - MODERATE_SEARCH</h3><p><b>Class:</b> animal<br/><b>Triage Score:</b> 0.708<br/><b>Confidence:</b> 69%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.54m<br/><b>Coordinates:</b> 27.717191, 85.324498</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3244975,27.7171913,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #36 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #36 - MODERATE_SEARCH</h3><p><b>Class:</b> animal<br/><b>Triage Score:</b> 0.708<br/><b>Confidence:</b> 69%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.65m<br/><b>Coordinates:</b> 27.717211, 85.324673</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3246725,27.7172114,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #69 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #69 - MODERATE_SEARCH</h3><p><b>Class:</b> animal<br/><b>Triage Score:</b> 0.708<br/><b>Confidence:</b> 69%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.58m<br/><b>Coordinates:</b> 27.717241, 85.324766</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3247661,27.7172414,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #27 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #27 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.705<br/><b>Confidence:</b> 68%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.84m<br/><b>Coordinates:</b> 27.716896, 85.324888</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3248881,27.7168958,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #172 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #172 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.704<br/><b>Confidence:</b> 68%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.92m<br/><b>Coordinates:</b> 27.716761, 85.324817</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3248173,27.7167608,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #37 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #37 - MODERATE_SEARCH</h3><p><b>Class:</b> animal<br/><b>Triage Score:</b> 0.703<br/><b>Confidence:</b> 67%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.71m<br/><b>Coordinates:</b> 27.717106, 85.324889</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3248889,27.7171058,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #39 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #39 - MODERATE_SEARCH</h3><p><b>Class:</b> animal<br/><b>Triage Score:</b> 0.703<br/><b>Confidence:</b> 67%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.69m<br/><b>Coordinates:</b> 27.717109, 85.324868</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3248683,27.7171087,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #78 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #78 - MODERATE_SEARCH</h3><p><b>Class:</b> animal<br/><b>Triage Score:</b> 0.703<br/><b>Confidence:</b> 67%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.51m<br/><b>Coordinates:</b> 27.717228, 85.324699</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3246988,27.7172279,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #145 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #145 - MODERATE_SEARCH</h3><p><b>Class:</b> animal<br/><b>Triage Score:</b> 0.703<br/><b>Confidence:</b> 67%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.5m<br/><b>Coordinates:</b> 27.717210, 85.324694</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3246936,27.7172101,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #88 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #88 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.701<br/><b>Confidence:</b> 66%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.63m<br/><b>Coordinates:</b> 27.717016, 85.324713</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3247126,27.7170161,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #42 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #42 - MODERATE_SEARCH</h3><p><b>Class:</b> animal<br/><b>Triage Score:</b> 0.698<br/><b>Confidence:</b> 66%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.69m<br/><b>Coordinates:</b> 27.717239, 85.324830</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3248303,27.7172394,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #83 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #83 - MODERATE_SEARCH</h3><p><b>Class:</b> animal<br/><b>Triage Score:</b> 0.698<br/><b>Confidence:</b> 66%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.59m<br/><b>Coordinates:</b> 27.717199, 85.324781</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3247814,27.717199,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #85 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #85 - MODERATE_SEARCH</h3><p><b>Class:</b> animal<br/><b>Triage Score:</b> 0.698<br/><b>Confidence:</b> 66%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.52m<br/><b>Coordinates:</b> 27.717219, 85.324707</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3247065,27.7172188,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #35 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #35 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.697<br/><b>Confidence:</b> 65%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.8m<br/><b>Coordinates:</b> 27.717290, 85.324493</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3244933,27.71729,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #97 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #97 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.696<br/><b>Confidence:</b> 65%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.86m<br/><b>Coordinates:</b> 27.716876, 85.324895</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3248949,27.7168762,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #162 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #162 - MODERATE_SEARCH</h3><p><b>Class:</b> animal<br/><b>Triage Score:</b> 0.695<br/><b>Confidence:</b> 65%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.58m<br/><b>Coordinates:</b> 27.717235, 85.324774</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3247735,27.7172353,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #19 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #19 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.694<br/><b>Confidence:</b> 64%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±3.02m<br/><b>Coordinates:</b> 27.716726, 85.324496</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.324496,27.7167259,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #60 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #60 - MODERATE_SEARCH</h3><p><b>Class:</b> animal<br/><b>Triage Score:</b> 0.693<br/><b>Confidence:</b> 64%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.69m<br/><b>Coordinates:</b> 27.717097, 85.324870</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3248696,27.7170969,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #158 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #158 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.691<br/><b>Confidence:</b> 63%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.48m<br/><b>Coordinates:</b> 27.717258, 85.324642</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3246416,27.717258,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #3 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #3 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.69<br/><b>Confidence:</b> 68%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.81m<br/><b>Coordinates:</b> 27.716933, 85.324374</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3243737,27.7169333,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #45 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #45 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.689<br/><b>Confidence:</b> 62%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.72m<br/><b>Coordinates:</b> 27.717335, 85.324883</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3248826,27.7173348,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #63 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #63 - MODERATE_SEARCH</h3><p><b>Class:</b> animal<br/><b>Triage Score:</b> 0.689<br/><b>Confidence:</b> 62%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.69m<br/><b>Coordinates:</b> 27.717122, 85.324874</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3248739,27.7171218,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #129 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #129 - MODERATE_SEARCH</h3><p><b>Class:</b> animal<br/><b>Triage Score:</b> 0.689<br/><b>Confidence:</b> 62%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.58m<br/><b>Coordinates:</b> 27.717360, 85.324659</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3246594,27.7173604,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #55 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #55 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.688<br/><b>Confidence:</b> 62%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.7m<br/><b>Coordinates:</b> 27.717357, 85.324845</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3248448,27.717357,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #68 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #68 - MODERATE_SEARCH</h3><p><b>Class:</b> animal<br/><b>Triage Score:</b> 0.687<br/><b>Confidence:</b> 62%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.54m<br/><b>Coordinates:</b> 27.717189, 85.324506</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3245059,27.717189,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #91 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #91 - MODERATE_SEARCH</h3><p><b>Class:</b> animal<br/><b>Triage Score:</b> 0.686<br/><b>Confidence:</b> 61%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.6m<br/><b>Coordinates:</b> 27.717237, 85.324787</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3247867,27.717237,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #114 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #114 - MODERATE_SEARCH</h3><p><b>Class:</b> animal<br/><b>Triage Score:</b> 0.686<br/><b>Confidence:</b> 61%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.57m<br/><b>Coordinates:</b> 27.717240, 85.324756</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.324756,27.7172399,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #142 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #142 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.686<br/><b>Confidence:</b> 62%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.73m<br/><b>Coordinates:</b> 27.717327, 85.324902</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.324902,27.7173271,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #165 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #165 - MODERATE_SEARCH</h3><p><b>Class:</b> animal<br/><b>Triage Score:</b> 0.686<br/><b>Confidence:</b> 62%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.68m<br/><b>Coordinates:</b> 27.717158, 85.324870</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3248698,27.7171576,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #52 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #52 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.685<br/><b>Confidence:</b> 61%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.74m<br/><b>Coordinates:</b> 27.717375, 85.324886</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3248863,27.7173746,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #116 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #116 - MODERATE_SEARCH</h3><p><b>Class:</b> animal<br/><b>Triage Score:</b> 0.685<br/><b>Confidence:</b> 61%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.77m<br/><b>Coordinates:</b> 27.717329, 85.324941</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3249409,27.7173287,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #131 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #131 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.685<br/><b>Confidence:</b> 61%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.79m<br/><b>Coordinates:</b> 27.717571, 85.324583</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3245834,27.7175715,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #40 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #40 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.682<br/><b>Confidence:</b> 60%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.71m<br/><b>Coordinates:</b> 27.717496, 85.324120</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3241204,27.7174961,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #74 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #74 - MODERATE_SEARCH</h3><p><b>Class:</b> animal<br/><b>Triage Score:</b> 0.682<br/><b>Confidence:</b> 60%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.71m<br/><b>Coordinates:</b> 27.717134, 85.324735</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3247346,27.7171341,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #75 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #75 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.682<br/><b>Confidence:</b> 60%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.82m<br/><b>Coordinates:</b> 27.717214, 85.325014</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3250143,27.7172141,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #72 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #72 - MODERATE_SEARCH</h3><p><b>Class:</b> animal<br/><b>Triage Score:</b> 0.681<br/><b>Confidence:</b> 60%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.6m<br/><b>Coordinates:</b> 27.717244, 85.324612</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3246121,27.7172439,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #151 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #151 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.681<br/><b>Confidence:</b> 60%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.49m<br/><b>Coordinates:</b> 27.717101, 85.324590</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3245905,27.7171006,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #153 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #153 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.68<br/><b>Confidence:</b> 60%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.98m<br/><b>Coordinates:</b> 27.716734, 85.324896</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3248959,27.7167335,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #28 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #28 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.679<br/><b>Confidence:</b> 59%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.65m<br/><b>Coordinates:</b> 27.717017, 85.324406</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.324406,27.717017,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #34 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #34 - MODERATE_SEARCH</h3><p><b>Class:</b> animal<br/><b>Triage Score:</b> 0.677<br/><b>Confidence:</b> 59%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.73m<br/><b>Coordinates:</b> 27.717098, 85.324435</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3244347,27.7170976,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #115 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #115 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.676<br/><b>Confidence:</b> 58%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.99m<br/><b>Coordinates:</b> 27.716731, 85.324906</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3249065,27.7167306,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #134 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #134 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.673<br/><b>Confidence:</b> 57%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.73m<br/><b>Coordinates:</b> 27.717366, 85.324875</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3248745,27.717366,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #100 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #100 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.672<br/><b>Confidence:</b> 57%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.69m<br/><b>Coordinates:</b> 27.717394, 85.324799</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.324799,27.7173936,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #124 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #124 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.672<br/><b>Confidence:</b> 57%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.81m<br/><b>Coordinates:</b> 27.716916, 85.324880</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3248796,27.7169163,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #138 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #138 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.671<br/><b>Confidence:</b> 56%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.78m<br/><b>Coordinates:</b> 27.717280, 85.324970</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3249703,27.7172802,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #171 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #171 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.668<br/><b>Confidence:</b> 56%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.9m<br/><b>Coordinates:</b> 27.716779, 85.324823</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.324823,27.716779,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #149 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #149 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.666<br/><b>Confidence:</b> 55%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.7m<br/><b>Coordinates:</b> 27.717414, 85.324790</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3247901,27.7174142,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #173 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #173 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.666<br/><b>Confidence:</b> 55%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.49m<br/><b>Coordinates:</b> 27.717267, 85.324492</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3244922,27.7172671,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #102 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #102 - MODERATE_SEARCH</h3><p><b>Class:</b> animal<br/><b>Triage Score:</b> 0.662<br/><b>Confidence:</b> 54%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.69m<br/><b>Coordinates:</b> 27.717117, 85.324877</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3248765,27.7171172,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #15 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #15 - MODERATE_SEARCH</h3><p><b>Class:</b> animal<br/><b>Triage Score:</b> 0.661<br/><b>Confidence:</b> 53%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.71m<br/><b>Coordinates:</b> 27.717108, 85.324870</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3248703,27.7171084,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #120 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #120 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.66<br/><b>Confidence:</b> 53%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.93m<br/><b>Coordinates:</b> 27.716895, 85.325012</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3250118,27.7168951,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #147 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #147 - MODERATE_SEARCH</h3><p><b>Class:</b> animal<br/><b>Triage Score:</b> 0.66<br/><b>Confidence:</b> 53%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.6m<br/><b>Coordinates:</b> 27.717219, 85.324793</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3247927,27.7172195,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #130 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #130 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.659<br/><b>Confidence:</b> 53%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.7m<br/><b>Coordinates:</b> 27.717129, 85.324884</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3248842,27.7171285,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #143 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #143 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.659<br/><b>Confidence:</b> 53%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.92m<br/><b>Coordinates:</b> 27.716900, 85.325010</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3250103,27.7169001,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #51 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #51 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.658<br/><b>Confidence:</b> 52%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.44m<br/><b>Coordinates:</b> 27.717240, 85.324222</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3242216,27.7172401,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #118 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #118 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.656<br/><b>Confidence:</b> 52%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.56m<br/><b>Coordinates:</b> 27.717108, 85.324716</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3247162,27.7171081,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #139 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #139 - MODERATE_SEARCH</h3><p><b>Class:</b> animal<br/><b>Triage Score:</b> 0.656<br/><b>Confidence:</b> 51%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.65m<br/><b>Coordinates:</b> 27.717214, 85.324847</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.324847,27.7172136,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #84 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #84 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.654<br/><b>Confidence:</b> 51%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.71m<br/><b>Coordinates:</b> 27.717129, 85.324895</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3248955,27.7171292,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #155 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #155 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.654<br/><b>Confidence:</b> 51%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.83m<br/><b>Coordinates:</b> 27.717060, 85.325005</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.325005,27.7170603,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #31 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #31 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.653<br/><b>Confidence:</b> 50%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.46m<br/><b>Coordinates:</b> 27.717255, 85.324109</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3241086,27.7172546,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #80 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #80 - MODERATE_SEARCH</h3><p><b>Class:</b> animal<br/><b>Triage Score:</b> 0.653<br/><b>Confidence:</b> 50%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.56m<br/><b>Coordinates:</b> 27.717225, 85.324745</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3247447,27.7172246,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #175 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #175 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.653<br/><b>Confidence:</b> 50%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.47m<br/><b>Coordinates:</b> 27.717258, 85.324638</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3246376,27.717258,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #64 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #64 - MODERATE_SEARCH</h3><p><b>Class:</b> animal<br/><b>Triage Score:</b> 0.652<br/><b>Confidence:</b> 50%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.68m<br/><b>Coordinates:</b> 27.717222, 85.324620</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.32462,27.7172215,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #113 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #113 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.652<br/><b>Confidence:</b> 50%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.72m<br/><b>Coordinates:</b> 27.717340, 85.324878</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3248781,27.7173397,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #170 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #170 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.652<br/><b>Confidence:</b> 50%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.9m<br/><b>Coordinates:</b> 27.716788, 85.324823</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3248233,27.7167884,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #121 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #121 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.649<br/><b>Confidence:</b> 49%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.98m<br/><b>Coordinates:</b> 27.716792, 85.324971</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3249707,27.7167924,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #141 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #141 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.649<br/><b>Confidence:</b> 49%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.67m<br/><b>Coordinates:</b> 27.717322, 85.324830</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3248296,27.7173215,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #105 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #105 - MODERATE_SEARCH</h3><p><b>Class:</b> animal<br/><b>Triage Score:</b> 0.648<br/><b>Confidence:</b> 49%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.57m<br/><b>Coordinates:</b> 27.717221, 85.324758</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3247581,27.7172214,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #123 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #123 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.648<br/><b>Confidence:</b> 49%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.47m<br/><b>Coordinates:</b> 27.717241, 85.324649</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3246494,27.7172406,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #61 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #61 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.647<br/><b>Confidence:</b> 48%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.83m<br/><b>Coordinates:</b> 27.716924, 85.324588</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.324588,27.7169236,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #117 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #117 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.647<br/><b>Confidence:</b> 49%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.9m<br/><b>Coordinates:</b> 27.716864, 85.324950</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3249496,27.7168643,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #157 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #157 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.647<br/><b>Confidence:</b> 49%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.73m<br/><b>Coordinates:</b> 27.717349, 85.324881</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3248806,27.717349,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #106 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #106 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.646<br/><b>Confidence:</b> 48%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.43m<br/><b>Coordinates:</b> 27.717237, 85.324535</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3245353,27.7172366,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #103 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #103 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.644<br/><b>Confidence:</b> 47%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.82m<br/><b>Coordinates:</b> 27.717336, 85.324997</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3249973,27.7173356,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #127 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #127 - MODERATE_SEARCH</h3><p><b>Class:</b> animal<br/><b>Triage Score:</b> 0.643<br/><b>Confidence:</b> 47%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.58m<br/><b>Coordinates:</b> 27.717379, 85.324616</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3246163,27.7173794,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #94 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #94 - MODERATE_SEARCH</h3><p><b>Class:</b> animal<br/><b>Triage Score:</b> 0.642<br/><b>Confidence:</b> 47%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.67m<br/><b>Coordinates:</b> 27.717181, 85.324866</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3248659,27.7171814,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #99 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #99 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.642<br/><b>Confidence:</b> 47%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.56m<br/><b>Coordinates:</b> 27.717276, 85.324735</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3247349,27.7172756,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #98 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #98 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.641<br/><b>Confidence:</b> 47%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.85m<br/><b>Coordinates:</b> 27.716880, 85.324889</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3248887,27.71688,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #38 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #38 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.64<br/><b>Confidence:</b> 46%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.38m<br/><b>Coordinates:</b> 27.717197, 85.324570</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3245699,27.7171966,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #137 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #137 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.64<br/><b>Confidence:</b> 46%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.47m<br/><b>Coordinates:</b> 27.717204, 85.324665</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3246647,27.7172039,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #46 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #46 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.639<br/><b>Confidence:</b> 46%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.76m<br/><b>Coordinates:</b> 27.717236, 85.324597</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3245966,27.7172356,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #62 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #62 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.636<br/><b>Confidence:</b> 45%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.69m<br/><b>Coordinates:</b> 27.717462, 85.324379</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3243787,27.7174622,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #150 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #150 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.636<br/><b>Confidence:</b> 45%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.47m<br/><b>Coordinates:</b> 27.717260, 85.324511</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3245113,27.7172602,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #167 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #167 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.636<br/><b>Confidence:</b> 45%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.83m<br/><b>Coordinates:</b> 27.716876, 85.324848</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3248483,27.7168759,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #133 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #133 - MODERATE_SEARCH</h3><p><b>Class:</b> animal<br/><b>Triage Score:</b> 0.635<br/><b>Confidence:</b> 45%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.5m<br/><b>Coordinates:</b> 27.717221, 85.324695</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3246948,27.717221,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #18 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #18 - MODERATE_SEARCH</h3><p><b>Class:</b> animal<br/><b>Triage Score:</b> 0.633<br/><b>Confidence:</b> 44%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.73m<br/><b>Coordinates:</b> 27.717127, 85.324627</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3246272,27.7171273,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #47 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #47 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.633<br/><b>Confidence:</b> 44%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.54m<br/><b>Coordinates:</b> 27.717309, 85.324141</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3241411,27.7173087,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #177 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #177 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.633<br/><b>Confidence:</b> 44%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.86m<br/><b>Coordinates:</b> 27.716879, 85.324897</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3248969,27.716879,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #76 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #76 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.631<br/><b>Confidence:</b> 43%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.82m<br/><b>Coordinates:</b> 27.717591, 85.324438</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3244383,27.7175912,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #159 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #159 - MODERATE_SEARCH</h3><p><b>Class:</b> animal<br/><b>Triage Score:</b> 0.631<br/><b>Confidence:</b> 43%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.7m<br/><b>Coordinates:</b> 27.717081, 85.324873</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3248729,27.7170808,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #163 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #163 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.631<br/><b>Confidence:</b> 43%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.97m<br/><b>Coordinates:</b> 27.716747, 85.324899</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.324899,27.7167472,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #54 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #54 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.629<br/><b>Confidence:</b> 43%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.76m<br/><b>Coordinates:</b> 27.717354, 85.324918</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3249179,27.7173543,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #57 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #57 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.629<br/><b>Confidence:</b> 43%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.74m<br/><b>Coordinates:</b> 27.717515, 85.324394</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3243943,27.7175147,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #70 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #70 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.629<br/><b>Confidence:</b> 42%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.45m<br/><b>Coordinates:</b> 27.717241, 85.324375</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3243746,27.7172409,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #156 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #156 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.629<br/><b>Confidence:</b> 43%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.71m<br/><b>Coordinates:</b> 27.717501, 85.324555</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.324555,27.7175011,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #43 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #43 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.624<br/><b>Confidence:</b> 41%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.81m<br/><b>Coordinates:</b> 27.717587, 85.324103</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3241031,27.7175872,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #58 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #58 - MODERATE_SEARCH</h3><p><b>Class:</b> animal<br/><b>Triage Score:</b> 0.624<br/><b>Confidence:</b> 41%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.66m<br/><b>Coordinates:</b> 27.717191, 85.324859</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3248594,27.7171907,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #122 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #122 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.624<br/><b>Confidence:</b> 41%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.69m<br/><b>Coordinates:</b> 27.716919, 85.324579</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3245792,27.7169191,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #128 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #128 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.624<br/><b>Confidence:</b> 41%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.8m<br/><b>Coordinates:</b> 27.717553, 85.324735</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3247351,27.7175529,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #152 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #152 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.624<br/><b>Confidence:</b> 41%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.91m<br/><b>Coordinates:</b> 27.717632, 85.324800</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3248005,27.7176317,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #169 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #169 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.624<br/><b>Confidence:</b> 41%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.87m<br/><b>Coordinates:</b> 27.716822, 85.324831</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.324831,27.7168224,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #66 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #66 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.623<br/><b>Confidence:</b> 40%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.58m<br/><b>Coordinates:</b> 27.717103, 85.324542</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3245422,27.7171026,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #136 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #136 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.623<br/><b>Confidence:</b> 41%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.51m<br/><b>Coordinates:</b> 27.717293, 85.324495</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3244952,27.717293,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #164 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #164 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.623<br/><b>Confidence:</b> 41%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.76m<br/><b>Coordinates:</b> 27.717294, 85.324940</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3249402,27.7172942,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #79 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #79 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.622<br/><b>Confidence:</b> 40%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.78m<br/><b>Coordinates:</b> 27.717359, 85.324911</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3249105,27.717359,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #49 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #49 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.619<br/><b>Confidence:</b> 39%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.95m<br/><b>Coordinates:</b> 27.716796, 85.324524</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3245237,27.7167957,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #126 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #126 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.618<br/><b>Confidence:</b> 39%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.68m<br/><b>Coordinates:</b> 27.717459, 85.324478</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3244777,27.7174587,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #67 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #67 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.617<br/><b>Confidence:</b> 39%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.82m<br/><b>Coordinates:</b> 27.717249, 85.324734</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3247337,27.7172486,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #89 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #89 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.616<br/><b>Confidence:</b> 38%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.77m<br/><b>Coordinates:</b> 27.717469, 85.324833</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3248327,27.7174693,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #146 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #146 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.616<br/><b>Confidence:</b> 38%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.71m<br/><b>Coordinates:</b> 27.717333, 85.324874</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3248738,27.7173328,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #53 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #53 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.615<br/><b>Confidence:</b> 38%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.76m<br/><b>Coordinates:</b> 27.717544, 85.324216</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3242162,27.7175444,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #176 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #176 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.615<br/><b>Confidence:</b> 38%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.55m<br/><b>Coordinates:</b> 27.717257, 85.324732</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3247323,27.7172574,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #148 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #148 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.612<br/><b>Confidence:</b> 37%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.74m<br/><b>Coordinates:</b> 27.717177, 85.324940</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3249402,27.7171773,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #59 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #59 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.611<br/><b>Confidence:</b> 36%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.69m<br/><b>Coordinates:</b> 27.717481, 85.324253</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3242528,27.7174812,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #132 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #132 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.61<br/><b>Confidence:</b> 36%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±3.0m<br/><b>Coordinates:</b> 27.717586, 85.325028</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3250277,27.7175863,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #8 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #8 - MODERATE_SEARCH</h3><p><b>Class:</b> animal<br/><b>Triage Score:</b> 0.609<br/><b>Confidence:</b> 71%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.64m<br/><b>Coordinates:</b> 27.717212, 85.324280</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3242799,27.7172116,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #81 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #81 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.609<br/><b>Confidence:</b> 36%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.92m<br/><b>Coordinates:</b> 27.716809, 85.324906</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3249065,27.716809,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #135 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #135 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.609<br/><b>Confidence:</b> 36%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.43m<br/><b>Coordinates:</b> 27.717234, 85.324594</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3245944,27.7172342,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #144 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #144 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.609<br/><b>Confidence:</b> 36%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.74m<br/><b>Coordinates:</b> 27.717376, 85.324874</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.324874,27.7173761,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #110 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #110 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.608<br/><b>Confidence:</b> 35%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.68m<br/><b>Coordinates:</b> 27.717241, 85.324868</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3248679,27.7172412,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #92 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #92 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.607<br/><b>Confidence:</b> 35%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.69m<br/><b>Coordinates:</b> 27.716917, 85.324586</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.324586,27.7169171,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #107 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #107 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.607<br/><b>Confidence:</b> 35%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.56m<br/><b>Coordinates:</b> 27.717101, 85.324721</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3247215,27.7171014,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #140 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #140 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.607<br/><b>Confidence:</b> 35%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.74m<br/><b>Coordinates:</b> 27.717523, 85.324539</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3245392,27.7175225,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #168 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #168 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.607<br/><b>Confidence:</b> 35%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.68m<br/><b>Coordinates:</b> 27.716923, 85.324581</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3245809,27.7169232,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #96 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #96 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.606<br/><b>Confidence:</b> 35%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.6m<br/><b>Coordinates:</b> 27.717283, 85.324769</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3247693,27.7172833,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #111 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #111 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.606<br/><b>Confidence:</b> 35%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.55m<br/><b>Coordinates:</b> 27.717291, 85.324708</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3247082,27.7172909,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #112 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #112 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.606<br/><b>Confidence:</b> 35%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.79m<br/><b>Coordinates:</b> 27.717570, 85.324588</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3245877,27.71757,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #161 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #161 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.606<br/><b>Confidence:</b> 35%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.81m<br/><b>Coordinates:</b> 27.717590, 85.324563</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3245634,27.71759,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #32 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #32 - MODERATE_SEARCH</h3><p><b>Class:</b> human<br/><b>Triage Score:</b> 0.571<br/><b>Confidence:</b> 43%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.57m<br/><b>Coordinates:</b> 27.717104, 85.324197</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3241966,27.7171042,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #25 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #25 - MODERATE_SEARCH</h3><p><b>Class:</b> animal<br/><b>Triage Score:</b> 0.561<br/><b>Confidence:</b> 50%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.69m<br/><b>Coordinates:</b> 27.717248, 85.324332</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3243321,27.7172479,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #24 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #24 - MODERATE_SEARCH</h3><p><b>Class:</b> animal<br/><b>Triage Score:</b> 0.549<br/><b>Confidence:</b> 51%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.56m<br/><b>Coordinates:</b> 27.717210, 85.324200</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3242004,27.7172096,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #20 [MODERATE_SEARCH]</name>
+      <description><![CDATA[<h3>Track #20 - MODERATE_SEARCH</h3><p><b>Class:</b> animal<br/><b>Triage Score:</b> 0.544<br/><b>Confidence:</b> 54%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.63m<br/><b>Coordinates:</b> 27.717242, 85.324258</p>]]></description>
+      <styleUrl>#moderateStyle</styleUrl>
+      <Point>
+        <coordinates>85.3242575,27.7172418,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #13 [LOW_PRIORITY]</name>
+      <description><![CDATA[<h3>Track #13 - LOW_PRIORITY</h3><p><b>Class:</b> animal<br/><b>Triage Score:</b> 0.498<br/><b>Confidence:</b> 44%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.71m<br/><b>Coordinates:</b> 27.717133, 85.324334</p>]]></description>
+      <styleUrl>#lowStyle</styleUrl>
+      <Point>
+        <coordinates>85.3243337,27.7171329,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #22 [LOW_PRIORITY]</name>
+      <description><![CDATA[<h3>Track #22 - LOW_PRIORITY</h3><p><b>Class:</b> animal<br/><b>Triage Score:</b> 0.498<br/><b>Confidence:</b> 39%<br/><b>Movement Status:</b> STATIONARY<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.61m<br/><b>Coordinates:</b> 27.717237, 85.324238</p>]]></description>
+      <styleUrl>#lowStyle</styleUrl>
+      <Point>
+        <coordinates>85.3242378,27.7172366,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #95 [LOW_PRIORITY]</name>
+      <description><![CDATA[<h3>Track #95 - LOW_PRIORITY</h3><p><b>Class:</b> animal<br/><b>Triage Score:</b> 0.374<br/><b>Confidence:</b> 74%<br/><b>Movement Status:</b> MOBILE<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.58m<br/><b>Coordinates:</b> 27.717374, 85.324622</p>]]></description>
+      <styleUrl>#lowStyle</styleUrl>
+      <Point>
+        <coordinates>85.3246222,27.7173738,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Survivor #90 [LOW_PRIORITY]</name>
+      <description><![CDATA[<h3>Track #90 - LOW_PRIORITY</h3><p><b>Class:</b> animal<br/><b>Triage Score:</b> 0.346<br/><b>Confidence:</b> 65%<br/><b>Movement Status:</b> MOBILE<br/><b>Thermal Delta:</b> N/A<br/><b>GPS Uncertainty:</b> ±2.77m<br/><b>Coordinates:</b> 27.717320, 85.324944</p>]]></description>
+      <styleUrl>#lowStyle</styleUrl>
+      <Point>
+        <coordinates>85.3249435,27.7173196,0</coordinates>
+      </Point>
+    </Placemark>
+  </Document>
+</kml>

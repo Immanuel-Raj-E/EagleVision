@@ -1,9 +1,10 @@
-torch>=2.0
-torchvision>=0.15
-ultralytics>=8.1
-numpy>=1.24
-opencv-python-headless>=4.8
-matplotlib>=3.7
-pandas>=2.0
-ensemble-boxes>=1.0
-Pillow>=10.0
+# Sparse Frame Selector & SAR Pipeline Dependencies
+opencv-python>=4.8.0
+numpy>=1.23.0
+tqdm>=4.65.0
+pandas>=2.0.0
+scikit-image>=0.20.0
+
+# GPU Object Detection (Install PyTorch with CUDA 12.4 first)
+# pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
+ultralytics>=8.0.0
