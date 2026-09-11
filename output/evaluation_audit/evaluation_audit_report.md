@@ -6,7 +6,7 @@
 | Metric | Acceptance Threshold | Measured Result | Verdict |
 | :--- | :--- | :--- | :--- |
 | **Recall @ IoU 0.5** | $\ge 90.0\%$ | **100.0%** | PASS |
-| **Mean Pipeline Latency** | $< 300.0\text{ ms}$ | **55.2 ms** | PASS |
+| **Mean Pipeline Latency** | $< 300.0\text{ ms}$ | **135.7 ms** | PASS |
 | **Deduplication Accuracy** | $\ge 85.0\%$ | **100.0%** | PASS |
 | **False Positives / Min** | $< 10.0\text{ FP/min}$ | **0.00 FP/min** | PASS |
 
@@ -25,6 +25,6 @@
 - **False Negatives**: 0
 - **Precision @ 0.5**: 100.0%
 - **F1 Score**: 1.000
-- **95th Percentile Latency**: 134.8 ms
-- **Max Latency**: 162.7 ms
+- **95th Percentile Latency**: 195.9 ms
+- **Max Latency**: 322.6 ms
 - **Frames Evaluated**: 60 (2.0s)

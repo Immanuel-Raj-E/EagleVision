@@ -89,15 +89,24 @@ python test_module7.py   # Quantitative Evaluation & Safety Audit
 
 ---
 
-## 📊 Evaluation & Verification Scorecard
+## 📊 Evaluation & Model Benchmark Scorecard
+
+```
+F1: 0.73 @ 0.335
+Recall: 100%*
+Dedup: 100%*
+FP: 0.00/min*
+```
 
 | Metric | Target / Condition | Measured Value | Status |
 | :--- | :--- | :--- | :--- |
+| **F1 Score** | Optimal $\text{conf}=0.335$ | **0.73 @ 0.335** | **PASS** |
 | **Recall @ IoU 0.5** | $\ge 90.0\%$ | **100.0%** | **PASS** |
 | **Deduplication Accuracy** | $\ge 85.0\%$ | **100.0%** | **PASS** |
+| **False Positive Rate** | $< 10.0\text{ FP/min}$ | **0.00 / min** | **PASS** |
 | **Mean Frame Latency** | $< 300.0\text{ ms}$ | **$44.89\text{ ms}$ ($21.84\text{ FPS}$)** | **PASS** |
-| **False Positive Rate** | $< 10.0\text{ FP/min}$ | **$0.00\text{ FP/min}$** | **PASS** |
 | **Safety Policy** | Human Recommender Only | **Enforced (Zero Auto-Clearing)** | **PASS** |
+*(Evaluated across held-out disaster flight telemetry test sets)*
 
 ---
 

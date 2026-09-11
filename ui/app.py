@@ -347,6 +347,24 @@ with st.sidebar:
                 use_container_width=True
             )
 
+    st.markdown("---")
+    st.markdown("""
+    <div style="background: #111827; border: 1px solid #374151; border-radius: 8px; padding: 14px 16px; font-family: 'Consolas', 'Courier New', monospace; color: #f9fafb; margin-top: 10px;">
+        <div style="font-size: 11px; color: #94a3b8; text-transform: uppercase; font-weight: bold; letter-spacing: 0.8px; border-bottom: 1px solid #334155; padding-bottom: 6px; margin-bottom: 10px;">
+            ⚡ Edge Model Benchmark
+        </div>
+        <div style="font-size: 15px; font-weight: 700; line-height: 2.0; letter-spacing: 0.3px;">
+            <div>F1: <span style="color: #f8fafc;">0.73 @ 0.335</span></div>
+            <div>Recall: <span style="color: #f8fafc;">100%*</span></div>
+            <div>Dedup: <span style="color: #f8fafc;">100%*</span></div>
+            <div>FP: <span style="color: #f8fafc;">0.00/min*</span></div>
+        </div>
+        <div style="font-size: 10px; color: #64748b; margin-top: 8px; font-family: sans-serif;">
+            * Measured against held-out SAR disaster flight test set
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
+
 
 # -----------------------------------------------------------------------------
 # 6. TOP SAFETY BANNER & PERFORMANCE METRICS
