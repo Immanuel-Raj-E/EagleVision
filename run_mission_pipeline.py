@@ -111,6 +111,7 @@ def run_mission(
     raycaster = GeoRaycaster(intrinsics=intrinsics)
     deduplicator = SpatialDeduplicator(match_radius_m=8.0, min_hits_to_confirm=3)
     triage = TriageEngine(output_dir=output_dir, evidence_dir=evidence_dir)
+    triage.clear_evidence()
 
     # 4. Stream Processing Loop
     print(f"\n[Phase 1] Streaming & Processing Frames (Stride = {sample_stride})...")

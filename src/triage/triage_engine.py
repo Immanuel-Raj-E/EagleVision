@@ -74,6 +74,18 @@ class TriageEngine:
         os.makedirs(self.annotated_evidence_dir, exist_ok=True)
         os.makedirs(self.full_frames_dir, exist_ok=True)
 
+    def clear_evidence(self):
+        """Purges old data frames and evidence crops from the survivor priority queue / evidence store."""
+        for d in [self.raw_evidence_dir, self.annotated_evidence_dir, self.full_frames_dir]:
+            if os.path.exists(d):
+                for f in os.listdir(d):
+                    fp = os.path.join(d, f)
+                    try:
+                        if os.path.isfile(fp):
+                            os.remove(fp)
+                    except Exception:
+                        pass
+
     def compute_triage_score(
         self,
         confidence: float,
