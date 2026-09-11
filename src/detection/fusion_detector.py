@@ -60,11 +60,11 @@ class FusionDetector:
     # 0: person -> "human"
     # 1: animal (or COCO IDs 14..23) -> "animal"
     ANIMAL_COCO_IDS = {14, 15, 16, 17, 18, 19, 20, 21, 22, 23}
-    DEFAULT_SAR_MODEL = r"d:\SEC\runs\sar_finetune\yolov8s_sar\weights\best.pt"
+    DEFAULT_SAR_MODEL = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "runs", "sar_finetune", "yolov8s_sar", "weights", "best.pt"))
 
     def __init__(
         self,
-        model_path: str = DEFAULT_SAR_MODEL if os.path.exists(DEFAULT_SAR_MODEL) else ("yolov8s.pt" if os.path.exists("yolov8s.pt") else "yolov8n.pt"),
+        model_path: Optional[str] = None,
         confidence_threshold: float = 0.25,
         device: str = "cuda:0",
         slice_height: int = 960,
@@ -76,6 +76,14 @@ class FusionDetector:
         imgsz: int = 640,
         half: bool = True
     ):
+        if model_path is None:
+            if os.path.exists(self.DEFAULT_SAR_MODEL):
+                model_path = self.DEFAULT_SAR_MODEL
+            elif os.path.exists("yolov8s.pt"):
+                model_path = "yolov8s.pt"
+            else:
+                model_path = "yolov8n.pt"
+
         self.model_path = model_path
         self.confidence_threshold = confidence_threshold
         self.device = device if (torch.cuda.is_available() and "cuda" in device) else "cpu"

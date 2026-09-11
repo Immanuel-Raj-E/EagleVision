@@ -1,10 +1,22 @@
-# Sparse Frame Selector & SAR Pipeline Dependencies
-opencv-python>=4.8.0
+# Core Computer Vision & Image Processing
+opencv-python-headless>=4.8.0
 numpy>=1.23.0
-tqdm>=4.65.0
 pandas>=2.0.0
 scikit-image>=0.20.0
+Pillow>=9.5.0
+scipy>=1.10.0
+shapely>=2.0.0
+filterpy>=1.4.5
+tqdm>=4.65.0
+requests>=2.28.0
 
-# GPU Object Detection (Install PyTorch with CUDA 12.4 first)
-# pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
+# Deep Learning & Detection Engines
+torch>=2.0.0
+torchvision>=0.15.0
 ultralytics>=8.0.0
+sahi>=0.11.14
+
+# Web Dashboard & Geospatial UI
+streamlit>=1.30.0
+folium>=0.14.0
+streamlit-folium>=0.15.0
