@@ -262,6 +262,89 @@ class TriageEngine:
             hits=hits
         )
 
+    def process_ground_entity(
+        self,
+        entity: Any,
+        first_detected_ts: Optional[float] = None
+    ) -> TriageRecord:
+        """Processes a deduplicated GroundEntity into a final TriageRecord."""
+        score, urgency, color = self.compute_triage_score(
+            confidence=entity.best_confidence,
+            is_stationary=entity.is_stationary,
+            thermal_delta=entity.thermal_delta,
+            hits=entity.total_hits
+        )
+
+        raw_path, ann_path, raw_b64, ann_b64 = self.extract_dual_evidence_crops(
+            frame_rgb=entity.best_frame,
+            crop_bbox=entity.best_crop_bbox,
+            track_id=entity.entity_id,
+            urgency_level=urgency,
+            confidence=entity.best_confidence,
+            class_name=entity.class_name
+        )
+
+        full_frame_path = ""
+        if entity.best_frame is not None:
+            full_frame_path = os.path.join(self.full_frames_dir, f"track_{entity.entity_id}_full.jpg")
+            cv2.imwrite(full_frame_path, entity.best_frame)
+
+        return TriageRecord(
+            track_id=entity.entity_id,
+            class_name=entity.class_name,
+            latitude=entity.latitude,
+            longitude=entity.longitude,
+            triage_score=score,
+            urgency_level=urgency,
+            urgency_color=color,
+            confidence=entity.best_confidence,
+            is_stationary=entity.is_stationary,
+            status=entity.status,
+            thermal_delta=entity.thermal_delta,
+            error_radius_m=entity.error_radius_m,
+            raw_crop_path=raw_path,
+            annotated_crop_path=ann_path,
+            crop_bbox=list(entity.best_crop_bbox),
+            full_frame_path=full_frame_path,
+            crop_base64_raw=raw_b64,
+            crop_base64_annotated=ann_b64,
+            first_detected_ts=entity.first_detected_ms,
+            last_detected_ts=entity.last_detected_ms,
+            hits=entity.total_hits
+        )
+
+    def deduplicate_records(
+        self,
+        records: List[TriageRecord],
+        match_radius_m: float = 8.0
+    ) -> List[TriageRecord]:
+        """Performs post-hoc spatial-temporal deduplication on a list of TriageRecords."""
+        from src.tracking.deduplicator import haversine_distance_m
+        deduped: List[TriageRecord] = []
+        for rec in records:
+            matched = False
+            for existing in deduped:
+                if existing.class_name != rec.class_name:
+                    continue
+                dist = haversine_distance_m(rec.latitude, rec.longitude, existing.latitude, existing.longitude)
+                if dist <= match_radius_m:
+                    matched = True
+                    # Merge into existing: update hit count, last detected, higher confidence
+                    existing.hits += rec.hits
+                    existing.last_detected_ts = max(existing.last_detected_ts, rec.last_detected_ts)
+                    if rec.confidence > existing.confidence:
+                        existing.confidence = rec.confidence
+                        existing.triage_score = max(existing.triage_score, rec.triage_score)
+                        existing.crop_bbox = rec.crop_bbox
+                        existing.raw_crop_path = rec.raw_crop_path
+                        existing.annotated_crop_path = rec.annotated_crop_path
+                        existing.crop_base64_raw = rec.crop_base64_raw
+                        existing.crop_base64_annotated = rec.crop_base64_annotated
+                    break
+            if not matched:
+                deduped.append(rec)
+        return deduped
+
     def export_geojson(
         self,
         records: List[TriageRecord],

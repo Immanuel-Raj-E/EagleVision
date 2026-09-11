@@ -22,6 +22,7 @@ import torch
 from src.ingest.telemetry_parser import TelemetryParser, TelemetrySample
 from src.detection.fusion_detector import FusionDetector, DetectionResult, FrameDetections
 from src.tracking.tracker import ByteTracker, TrackedSurvivor
+from src.tracking.deduplicator import SpatialDeduplicator, GroundEntity
 from src.geoloc.raycaster import GeoRaycaster, GeolocatedSurvivor, CameraIntrinsics
 from src.triage.triage_engine import TriageEngine, TriageRecord
 from src.evaluation.evaluate import EvaluationEngine, EvaluationMetrics
@@ -93,8 +94,11 @@ def run_mission(
     detector = FusionDetector(
         confidence_threshold=conf_thresh,
         device=device,
-        slice_height=min(640, height),
-        slice_width=min(640, width)
+        slice_height=min(960, height),
+        slice_width=min(1280, width),
+        overlap_height_ratio=0.12,
+        overlap_width_ratio=0.12,
+        perform_standard_pred=False
     )
     tracker = ByteTracker(
         high_thresh=0.35,
@@ -105,6 +109,7 @@ def run_mission(
         max_lost_frames=30
     )
     raycaster = GeoRaycaster(intrinsics=intrinsics)
+    deduplicator = SpatialDeduplicator(match_radius_m=8.0, min_hits_to_confirm=3)
     triage = TriageEngine(output_dir=output_dir, evidence_dir=evidence_dir)
 
     # 4. Stream Processing Loop
@@ -112,7 +117,6 @@ def run_mission(
     frame_idx = 0
     processed_count = 0
     all_active_tracks = []
-    unique_tracked_survivors: dict[int, TriageRecord] = {}
     
     latencies = []
     t_pipeline_start = time.perf_counter()
@@ -133,7 +137,7 @@ def run_mission(
             # Step A: Query Telemetry
             telem_sample, dt_ms, is_synced = telem_parser.get_telemetry_at(pts_ms)
 
-            # Step B: Module 2 - Sliced Detection
+            # Step B: Module 2 - Batched FP16 Sliced Detection
             frame_dets = detector.detect(
                 frame_input=frame,
                 thermal_image=frame_thermal,
@@ -148,41 +152,53 @@ def run_mission(
                 yaw=telem_sample.yaw
             )
 
-            # Step C: Module 3 - ByteTrack Association
+            # Step C: Module 3 - ByteTrack Association & Track Filtering
             active_tracks = tracker.update(
                 detections_input=frame_dets.detections,
                 frame_id=frame_idx,
                 timestamp_ms=pts_ms
             )
 
-            # Step D: Module 4 - WGS84 3D Raycasting
+            # Step D: Module 4 - WGS84 3D Raycasting (Confirmed Tracks)
             geoloc_survivors = raycaster.geolocate_tracks(
                 tracks=active_tracks,
                 telemetry=telem_sample,
                 timestamp_ms=pts_ms,
-                confirmed_only=False
+                confirmed_only=True
             )
 
-            # Step E: Module 5 - Triage Scoring & Dual Evidence Extraction
+            # Step E: Geospatial Deduplication (Cluster recurrent sightings by GPS coordinate)
             for g_surv in geoloc_survivors:
-                if g_surv.track_id not in unique_tracked_survivors or g_surv.confidence > unique_tracked_survivors[g_surv.track_id].confidence:
-                    rec = triage.process_survivor(
-                        survivor=g_surv,
-                        frame_rgb=frame,
-                        hits=tracker.tracks[0].hits if tracker.tracks else 3,
-                        first_detected_ts=unique_tracked_survivors[g_surv.track_id].first_detected_ts if g_surv.track_id in unique_tracked_survivors else pts_ms
-                    )
-                    unique_tracked_survivors[g_surv.track_id] = rec
+                track_obj = next((t for t in active_tracks if t.track_id == g_surv.track_id), None)
+                hits_val = track_obj.hits if track_obj else 3
+                deduplicator.update_entity(
+                    track_id=g_surv.track_id,
+                    class_name=g_surv.class_name,
+                    lat=g_surv.latitude,
+                    lon=g_surv.longitude,
+                    confidence=g_surv.confidence,
+                    is_stationary=g_surv.is_stationary,
+                    thermal_delta=g_surv.thermal_delta,
+                    error_radius_m=g_surv.error_radius_m,
+                    crop_bbox=g_surv.crop_bbox,
+                    frame_rgb=frame,
+                    timestamp_ms=pts_ms,
+                    hits=hits_val
+                )
 
             t_frame_elapsed = (time.perf_counter() - t_frame_start) * 1000.0
             latencies.append(t_frame_elapsed)
             processed_count += 1
 
+            confirmed_entities = deduplicator.get_all_entities(confirmed_only=True)
             if progress_callback is not None:
-                progress_callback(min(1.0, (frame_idx + 1) / total_video_frames), f"Processing frame {frame_idx + 1}/{total_video_frames} ({len(unique_tracked_survivors)} survivors tracked)")
+                progress_callback(
+                    min(1.0, (frame_idx + 1) / total_video_frames),
+                    f"Processing frame {frame_idx + 1}/{total_video_frames} ({len(confirmed_entities)} unique entities deduplicated)"
+                )
 
             if processed_count % 50 == 0 or frame_idx == total_video_frames - 1:
-                print(f"  * Processed Frame {frame_idx:4d}/{total_video_frames} ({pts_ms/1000.0:5.1f}s) | Active Tracks: {len(active_tracks):2d} | Latency: {t_frame_elapsed:5.1f} ms")
+                print(f"  * Processed Frame {frame_idx:4d}/{total_video_frames} ({pts_ms/1000.0:5.1f}s) | Active Tracks: {len(active_tracks):2d} | Unique Ground Survivors: {len(confirmed_entities)} | Latency: {t_frame_elapsed:5.1f} ms")
 
         frame_idx += 1
 
@@ -191,8 +207,16 @@ def run_mission(
         cap_thermal.release()
     total_pipeline_time_sec = time.perf_counter() - t_pipeline_start
 
-    # 5. Export Mission Products
-    all_records = list(unique_tracked_survivors.values())
+    # 5. Export Deduplicated Mission Products
+    ground_entities = deduplicator.get_all_entities(confirmed_only=True)
+    if not ground_entities:
+        ground_entities = deduplicator.get_all_entities(confirmed_only=False)
+
+    all_records = [triage.process_ground_entity(ent) for ent in ground_entities]
+    
+    # Final post-hoc deduplication safeguard
+    all_records = triage.deduplicate_records(all_records, match_radius_m=8.0)
+
     geojson_path = triage.export_geojson(all_records)
     kml_path = triage.export_kml(all_records)
     html_map_path = triage.generate_interactive_map(all_records)
@@ -213,6 +237,8 @@ def run_mission(
     human_count = sum(1 for r in all_records if r.class_name == "human")
     animal_count = sum(1 for r in all_records if r.class_name == "animal")
 
+    dedup_stats = deduplicator.get_stats()
+
     # Safety Guardrail Verification
     safety_guardrail = "ENFORCED (Recommender Only - Zero Auto-Clearing Permitted)"
     latency_passed = mean_lat < 300.0
@@ -229,6 +255,9 @@ def run_mission(
         "min_latency_ms": round(min_lat, 2),
         "max_latency_ms": round(max_lat, 2),
         "total_unique_survivor_tracks": len(all_records),
+        "total_raw_sightings": dedup_stats["total_raw_sightings"],
+        "duplicates_suppressed": dedup_stats["total_duplicate_suppressions"],
+        "deduplication_ratio_pct": dedup_stats["deduplication_ratio_pct"],
         "human_survivors_count": human_count,
         "animal_count": animal_count,
         "critical_rescue_count": len(crit_survivors),

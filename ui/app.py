@@ -343,11 +343,15 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-col_m1, col_m2, col_m3, col_m4 = st.columns(4)
+dedup_pct = metrics.get("deduplication_ratio_pct", 0.0)
+raw_sightings = metrics.get("total_raw_sightings", total_detected)
+dup_suppressed = metrics.get("duplicates_suppressed", 0)
+
+col_m1, col_m2, col_m3, col_m4, col_m5 = st.columns(5)
 with col_m1:
     st.markdown(f"""
     <div class="metric-card">
-        <div class="metric-title">Tracked Survivors</div>
+        <div class="metric-title">Unique Survivors</div>
         <div class="metric-val">{total_detected}</div>
     </div>
     """, unsafe_allow_html=True)
@@ -366,6 +370,13 @@ with col_m3:
     </div>
     """, unsafe_allow_html=True)
 with col_m4:
+    st.markdown(f"""
+    <div class="metric-card">
+        <div class="metric-title">Deduplication Ratio</div>
+        <div class="metric-val" style="color: #4ade80;">{dedup_pct:.1f}%</div>
+    </div>
+    """, unsafe_allow_html=True)
+with col_m5:
     st.markdown(f"""
     <div class="metric-card">
         <div class="metric-title">Mean Frame Latency</div>
