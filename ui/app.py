@@ -311,6 +311,21 @@ with st.sidebar:
             time.sleep(1)
             st.rerun()
 
+    if st.button("🗑️ Clear / Reset Mission Queue", use_container_width=True):
+        from src.triage.triage_engine import TriageEngine
+        triage_eng = TriageEngine(output_dir=OUTPUT_DIR, evidence_dir="evidence")
+        triage_eng.clear_evidence()
+        with open(GEOJSON_PATH, "w", encoding="utf-8") as f:
+            json.dump({"type": "FeatureCollection", "name": "SAR_Triage_Survivors", "crs": {"type": "name", "properties": {"name": "urn:ogc:def:crs:OGC:1.3:CRS84"}}, "features": []}, f, indent=2)
+        with open(KML_PATH, "w", encoding="utf-8") as f:
+            f.write('<?xml version="1.0" encoding="UTF-8"?>\n<kml xmlns="http://www.opengis.net/kml/2.2">\n  <Document>\n    <name>SAR Mission Triage Survivors</name>\n  </Document>\n</kml>\n')
+        with open(METRICS_JSON_PATH, "w", encoding="utf-8") as f:
+            json.dump({"total_video_frames": 0, "processed_frames": 0, "mean_latency_ms": 0.0, "total_unique_survivor_tracks": 0, "deduplication_ratio_pct": 0.0}, f, indent=2)
+        st.session_state.selected_track_id = None
+        st.success("Mission Queue and evidence cleared!")
+        time.sleep(0.5)
+        st.rerun()
+
     st.markdown("---")
     st.subheader("📥 Mission Data Exports")
     if os.path.exists(GEOJSON_PATH):
@@ -496,6 +511,8 @@ with map_col:
                 "Error": f"±{p.get('error_radius_m', 2.0)}m"
             })
         st.dataframe(table_data, use_container_width=True, hide_index=True)
+    else:
+        st.info("📋 Survivor Priority Queue is empty. Active survivor targets will appear here once video is processed.")
 
 
 with inspect_col:
