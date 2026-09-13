@@ -99,12 +99,22 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass
+
 # -----------------------------------------------------------------------------
 # 2. FILE DIRECTORIES & MAPTILER CONFIG
 # -----------------------------------------------------------------------------
-MAPTILER_API_KEY = "jBtSH9bEJVmpKvubVCvM"
-MAPTILER_TILE_URL = f"https://api.maptiler.com/maps/hybrid/{{z}}/{{x}}/{{y}}.jpg?key={MAPTILER_API_KEY}"
-MAPTILER_ATTRIBUTION = '&copy; <a href="https://www.maptiler.com/copyright/">MapTiler</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+MAPTILER_API_KEY = os.getenv("MAPTILER_API_KEY", "jBtSH9bEJVmpKvubVCvM")
+if MAPTILER_API_KEY and MAPTILER_API_KEY != "your_maptiler_api_key_here":
+    MAPTILER_TILE_URL = f"https://api.maptiler.com/maps/hybrid/{{z}}/{{x}}/{{y}}.jpg?key={MAPTILER_API_KEY}"
+    MAPTILER_ATTRIBUTION = '&copy; <a href="https://www.maptiler.com/copyright/">MapTiler</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+else:
+    MAPTILER_TILE_URL = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+    MAPTILER_ATTRIBUTION = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 
 UPLOADS_DIR = os.path.join("data", "uploads")
 OUTPUT_DIR = "output"

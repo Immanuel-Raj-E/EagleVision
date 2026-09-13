@@ -1,9 +1,18 @@
-# Virtual Environments
+# Environment Secrets & Credentials
+.env
+.env.local
+.env.*.local
+*.key
+*.pem
+
+# Python Virtual Environments
 yolo_env/
 .venv/
 env/
 venv/
 ENV/
+env.bak/
+venv.bak/
 
 # Python Cache & Bytecode
 __pycache__/
@@ -12,28 +21,42 @@ __pycache__/
 .pytest_cache/
 .ipynb_checkpoints/
 
-# Video Media Files (Uploads / Raw Demos)
+# Video Media Files (Uploads / Raw Footage / Demos)
 *.mp4
 *.avi
 *.mov
 *.mkv
 *.webm
+data/uploads/*
+uploads/
 
-# Large Datasets, Annotations & Training Runs (Local)
+# Model Weights, Checkpoints & Training Runs (Local Binaries)
+weights/
+runs/
+*.pt
+*.onnx
+*.engine
+*.tflite
+*.safetensors
+
+# Large Raw Datasets
 data/
 dataset/
-runs/
-weights/
-*.pt
+datasets/
 
-# Scratch, Evidence & Test Outputs
+# Evidence Caching, Output Artifacts & Logs
 evidence/
-output/*.html
 selected_frames/
 selected_frames_nepal_flood/
 test_single_rgb_out/
+output/*.html
+output/*.jpg
+output/*.png
 *.log
 
-# OS Specific
+# OS & IDE Metadata
 .DS_Store
 Thumbs.db
+.vscode/
+.idea/
+*.swp

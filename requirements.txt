@@ -1,22 +1,30 @@
-# Core Computer Vision & Image Processing
-opencv-python-headless>=4.8.0
-numpy>=1.23.0
-pandas>=2.0.0
-scikit-image>=0.20.0
+# ==============================================================================
+# EagleVision: Autonomous 4K RGB-Thermal Drone SAR Intelligence Pipeline
+# Core & Production Dependencies (Python 3.10 - 3.12)
+# ==============================================================================
+
+# Core Computer Vision & Mathematical Engines
+opencv-python-headless>=4.8.0.76
+numpy>=1.24.0,<=2.2.0
+scipy>=1.10.1
+scikit-image>=0.21.0
 Pillow>=9.5.0
-scipy>=1.10.0
-shapely>=2.0.0
+pandas>=2.0.0
+shapely>=2.0.1
 filterpy>=1.4.5
 tqdm>=4.65.0
 requests>=2.28.0
 
-# Deep Learning & Detection Engines
+# Deep Learning & Sliced Detection Frameworks
 torch>=2.0.0
 torchvision>=0.15.0
 ultralytics>=8.0.0
 sahi>=0.11.14
 
-# Web Dashboard & Geospatial UI
+# Mission Commander Web Dashboard & Geospatial Mapping
 streamlit>=1.30.0
 folium>=0.14.0
 streamlit-folium>=0.15.0
+
+# Environment Configuration & Secret Management
+python-dotenv>=1.0.0
