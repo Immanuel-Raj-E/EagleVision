@@ -3,8 +3,8 @@ app.py
 ======
 Mission-Grade Incident Commander Dashboard for Drone Search and Rescue (SAR).
 Features:
-- High-Contrast Light Theme with Full Element Visibility
-- Unified Dropdown / Overlay / Selectbox Contrast Protection
+- Premium High-Contrast Light Command Center Theme with Enhanced Element Highlights
+- Dynamic Visual Cards with Accent Borders, Subtle Elevation & Crisp Typography
 - Dual-Stream Video Ingestion (RGB + Thermal) with local staging in data/uploads/
 - MapTiler Hybrid Satellite Basemap integration
 - Full-Resolution Original Frame rendering (No blurred crops)
@@ -51,7 +51,7 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Custom High-Contrast Light SAR Command Styling
+# Custom High-Contrast Light SAR Command Styling with Vivid Element Highlights
 st.markdown("""
 <style>
     /* Global Base */
@@ -70,10 +70,11 @@ st.markdown("""
         border-bottom: 1px solid #e2e8f0;
     }
     
-    /* Sidebar Styling & Text Contrast */
+    /* Sidebar Container & High-Contrast Typography */
     [data-testid="stSidebar"] {
         background-color: #ffffff !important;
-        border-right: 1px solid #e2e8f0 !important;
+        border-right: 1.5px solid #e2e8f0 !important;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.03);
     }
     [data-testid="stSidebar"] h1, 
     [data-testid="stSidebar"] h2, 
@@ -81,6 +82,7 @@ st.markdown("""
     [data-testid="stSidebar"] h4 {
         color: #0f172a !important;
         font-weight: 800 !important;
+        letter-spacing: -0.3px;
     }
     [data-testid="stSidebar"] p,
     [data-testid="stSidebar"] label,
@@ -93,36 +95,63 @@ st.markdown("""
         color: #64748b !important;
     }
 
-    /* Suppress Uploader 200MB text & small helper labels */
-    [data-testid="stFileUploader"] small,
-    [data-testid="stFileUploaderHelp"],
-    div[data-testid="stFileUploadDropzone"] small,
-    div[data-testid="stFileUploadDropzone"] span:last-child,
-    div[data-testid="stFileUploader"] section small,
-    div[data-testid="stFileUploader"] span small {
-        display: none !important;
+    /* Section Header Highlight Bars */
+    .section-header {
+        font-size: 20px;
+        font-weight: 800;
+        color: #0f172a;
+        border-left: 4px solid #0284c7;
+        padding-left: 10px;
+        margin-bottom: 12px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
     }
 
-    /* File Uploader Dropzone Styling */
+    /* Complete Suppression of Uploader Limit Text (200MB / 1GB per file...) */
+    [data-testid="stFileUploaderInstructions"],
+    [data-testid="stFileUploaderDropzoneInstructions"],
+    [data-testid="stFileUploader"] small,
+    [data-testid="stFileUploaderHelp"],
+    [data-testid="stFileUploader"] div:has(> small),
+    [data-testid="stFileUploadDropzone"] small,
+    [data-testid="stFileUploadDropzone"] span:last-child,
+    div[data-testid="stFileUploader"] section small,
+    div[data-testid="stFileUploader"] section span:nth-child(2),
+    div[data-testid="stFileUploader"] span small {
+        display: none !important;
+        height: 0px !important;
+        font-size: 0px !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        line-height: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* Highlighted File Uploader Dropzone */
     section[data-testid="stFileUploadDropzone"] {
         background-color: #f8fafc !important;
-        border: 2px dashed #cbd5e1 !important;
+        border: 2px dashed #94a3b8 !important;
         border-radius: 10px !important;
-        padding: 16px 12px !important;
+        padding: 14px 10px !important;
+        transition: all 0.2s ease-in-out;
     }
     section[data-testid="stFileUploadDropzone"]:hover {
         border-color: #0284c7 !important;
         background-color: #f0f9ff !important;
+        box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.12);
     }
     section[data-testid="stFileUploadDropzone"] * {
         color: #1e293b !important;
     }
     section[data-testid="stFileUploadDropzone"] button {
-        background-color: #0284c7 !important;
+        background: linear-gradient(135deg, #0284c7, #0369a1) !important;
         color: #ffffff !important;
         border: none !important;
         border-radius: 6px !important;
-        font-weight: 600 !important;
+        font-weight: 700 !important;
+        box-shadow: 0 2px 6px rgba(2, 132, 199, 0.25) !important;
     }
 
     /* High-Contrast Selectbox / Dropdown & Hover Overlay Protection */
@@ -132,6 +161,7 @@ st.markdown("""
         border-radius: 8px !important;
         color: #0f172a !important;
         font-weight: 600 !important;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
     }
     div[data-baseweb="select"] span,
     div[data-baseweb="select"] div {
@@ -139,7 +169,7 @@ st.markdown("""
     }
     div[data-baseweb="select"]:hover > div {
         border-color: #0284c7 !important;
-        box-shadow: 0 0 0 1px #0284c7 !important;
+        box-shadow: 0 0 0 2px rgba(2, 132, 199, 0.15) !important;
     }
     
     /* Popover & Dropdown Options Menu */
@@ -147,9 +177,9 @@ st.markdown("""
     div[data-baseweb="popover"] > div,
     ul[role="listbox"] {
         background-color: #ffffff !important;
-        border: 1px solid #cbd5e1 !important;
+        border: 1.5px solid #cbd5e1 !important;
         border-radius: 8px !important;
-        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.12), 0 8px 10px -6px rgba(0, 0, 0, 0.08) !important;
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15), 0 8px 10px -6px rgba(0, 0, 0, 0.1) !important;
     }
     li[role="option"] {
         background-color: #ffffff !important;
@@ -165,6 +195,15 @@ st.markdown("""
         color: #0369a1 !important;
     }
 
+    /* Highlighted Toggles Box */
+    .toggles-panel {
+        background: #f1f5f9;
+        border: 1px solid #e2e8f0;
+        border-radius: 10px;
+        padding: 10px 16px;
+        margin-bottom: 14px;
+    }
+
     /* Checkbox Labels */
     [data-testid="stCheckbox"] label,
     [data-testid="stCheckbox"] span {
@@ -173,25 +212,31 @@ st.markdown("""
         font-size: 13px !important;
     }
 
-    /* Light Metrics Header Cards */
+    /* Highlighted Metrics Header Cards with Top Accent Borders */
     .metric-card {
         background: #ffffff;
-        border: 1px solid #e2e8f0;
+        border: 1.5px solid #e2e8f0;
+        border-top: 4px solid #0284c7;
         border-radius: 12px;
         padding: 16px 18px;
         text-align: center;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
         transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
     .metric-card:hover {
         transform: translateY(-2px);
-        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
     }
+    .metric-card.card-crit { border-top: 4px solid #ef4444; background: #fffbfb; }
+    .metric-card.card-mod { border-top: 4px solid #f97316; background: #fffdfa; }
+    .metric-card.card-dedup { border-top: 4px solid #10b981; background: #f9fefb; }
+    .metric-card.card-lat { border-top: 4px solid #6366f1; background: #fbfbfe; }
+
     .metric-title {
         font-size: 11px;
         color: #64748b;
         text-transform: uppercase;
-        font-weight: 700;
+        font-weight: 800;
         letter-spacing: 0.6px;
     }
     .metric-val {
@@ -204,50 +249,22 @@ st.markdown("""
     .metric-val.mod { color: #ea580c; }
     .metric-val.low { color: #d97706; }
 
-    /* Urgency Badges */
-    .badge-critical {
-        background: rgba(220, 38, 38, 0.12);
-        color: #dc2626;
-        border: 1px solid #fca5a5;
-        padding: 4px 12px;
-        border-radius: 6px;
-        font-weight: 800;
-        font-size: 12px;
-    }
-    .badge-moderate {
-        background: rgba(234, 88, 12, 0.12);
-        color: #ea580c;
-        border: 1px solid #fdba74;
-        padding: 4px 12px;
-        border-radius: 6px;
-        font-weight: 800;
-        font-size: 12px;
-    }
-    .badge-low {
-        background: rgba(217, 119, 6, 0.12);
-        color: #d97706;
-        border: 1px solid #fde68a;
-        padding: 4px 12px;
-        border-radius: 6px;
-        font-weight: 800;
-        font-size: 12px;
-    }
-
-    /* Light Telemetry HUD Card */
+    /* Highlighted Telemetry HUD Card */
     .telemetry-hud {
         background: #ffffff;
-        border: 1px solid #bae6fd;
+        border: 1.5px solid #bae6fd;
+        border-left: 5px solid #0284c7;
         border-radius: 12px;
         padding: 16px 20px;
         margin-top: 14px;
-        box-shadow: 0 4px 14px rgba(2, 132, 199, 0.08);
+        box-shadow: 0 4px 16px rgba(2, 132, 199, 0.08);
     }
     .hud-title {
         font-size: 13px;
-        font-weight: 700;
+        font-weight: 800;
         color: #0369a1;
         text-transform: uppercase;
-        letter-spacing: 0.5px;
+        letter-spacing: 0.6px;
         margin-bottom: 12px;
         display: flex;
         align-items: center;
@@ -261,35 +278,39 @@ st.markdown("""
     }
     .hud-item {
         background: #f8fafc;
-        padding: 8px 12px;
+        padding: 10px 12px;
         border-radius: 8px;
         border: 1px solid #e2e8f0;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
     }
     .hud-label {
         color: #64748b;
         font-size: 10px;
         text-transform: uppercase;
         font-weight: 700;
+        letter-spacing: 0.4px;
     }
     .hud-value {
         font-weight: 700;
         color: #0f172a;
         margin-top: 2px;
+        font-size: 13px;
     }
 
-    /* Rapid Rescue Dispatch Transmission Card */
+    /* Highlighted Rapid Rescue Dispatch Transmission Card */
     .dispatch-card {
         background: linear-gradient(135deg, #f0fdf4, #eff6ff);
-        border: 1.5px solid #4ade80;
+        border: 2px solid #22c55e;
+        border-left: 6px solid #16a34a;
         border-radius: 12px;
-        padding: 16px 20px;
+        padding: 18px 22px;
         margin-top: 14px;
-        box-shadow: 0 4px 16px rgba(22, 163, 74, 0.12);
+        box-shadow: 0 6px 20px rgba(22, 163, 74, 0.15);
     }
     .dispatch-title {
         color: #15803d;
         font-weight: 800;
-        font-size: 14px;
+        font-size: 15px;
         display: flex;
         align-items: center;
         gap: 8px;
@@ -301,26 +322,35 @@ st.markdown("""
         line-height: 1.6;
     }
 
-    /* Buttons Styling */
+    /* Highlighted Tactical Buttons */
     button[data-testid="baseButton-primary"] {
-        background: linear-gradient(135deg, #ef4444, #dc2626) !important;
+        background: linear-gradient(135deg, #0284c7, #0369a1) !important;
         color: #ffffff !important;
         border: none !important;
         border-radius: 8px !important;
         font-weight: 700 !important;
-        box-shadow: 0 4px 12px rgba(220, 38, 38, 0.25) !important;
+        padding: 10px 20px !important;
+        box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3) !important;
+        transition: transform 0.15s ease, box-shadow 0.15s ease !important;
     }
+    button[data-testid="baseButton-primary"]:hover {
+        transform: translateY(-1px) !important;
+        box-shadow: 0 6px 16px rgba(2, 132, 199, 0.4) !important;
+    }
+
     button[data-testid="baseButton-secondary"] {
         background-color: #ffffff !important;
         color: #0f172a !important;
         border: 1.5px solid #cbd5e1 !important;
         border-radius: 8px !important;
-        font-weight: 600 !important;
+        font-weight: 700 !important;
+        transition: all 0.15s ease !important;
     }
     button[data-testid="baseButton-secondary"]:hover {
         border-color: #0284c7 !important;
         color: #0284c7 !important;
         background-color: #f0f9ff !important;
+        box-shadow: 0 2px 8px rgba(2, 132, 199, 0.12) !important;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -387,7 +417,7 @@ def generate_queue_excel_bytes(features_list):
         p = feat["properties"]
         coords = feat["geometry"]["coordinates"]
         rows.append({
-            "Track ID": p.get("track_id"),
+            "Track ID": f"#{p.get('track_id')}",
             "Class": p.get("class_name", "human").upper(),
             "Triage Score": round(float(p.get("triage_score", 0.0)), 3),
             "Urgency Level": p.get("urgency_level", "LOW_PRIORITY"),
@@ -395,8 +425,8 @@ def generate_queue_excel_bytes(features_list):
             "Latitude": coords[1],
             "Longitude": coords[0],
             "GPS Coordinates": f"{coords[1]:.6f}, {coords[0]:.6f}",
-            "Estimated Error (m)": p.get("error_radius_m", 2.0),
-            "Thermal Delta (°C)": p.get("thermal_delta_c", "N/A"),
+            "Estimated Error (m)": f"±{p.get('error_radius_m', 2.0)}m",
+            "Thermal Delta (°C)": f"+{p.get('thermal_delta_c')}°C" if p.get('thermal_delta_c') else "N/A (Optical)",
             "Detection Confidence": f"{int(p.get('confidence', 0.9) * 100)}%",
             "Observation Duration (Frames)": p.get("hits_count", 1)
         })
@@ -461,7 +491,6 @@ def render_dynamic_full_frame(
     if crop_bbox and len(crop_bbox) == 4:
         x1, y1, x2, y2 = [int(round(v)) for v in crop_bbox]
     else:
-        # Default box in center if no bbox stored
         x1, y1, x2, y2 = int(w_img * 0.4), int(h_img * 0.4), int(w_img * 0.6), int(h_img * 0.6)
 
     # Draw crisp rectangle
@@ -518,7 +547,7 @@ with st.sidebar:
     st.caption("Autonomous 4K RGB-Thermal Disaster Vision Pipeline")
     st.markdown("---")
 
-    st.subheader("📹 Video Upload & Staging")
+    st.markdown("#### 📹 Video Upload & Staging")
     uploaded_rgb = st.file_uploader(
         "RGB Drone Video (.mp4, .avi, .mov)",
         type=["mp4", "avi", "mov", "mkv"],
@@ -548,6 +577,7 @@ with st.sidebar:
     # Default to TEST_VIDEO_1.mp4 if no upload yet
     active_video_path = rgb_save_path or ("TEST_VIDEO_1.mp4" if os.path.exists("TEST_VIDEO_1.mp4") else None)
 
+    st.markdown("<div style='margin-top: 10px;'></div>", unsafe_allow_html=True)
     process_btn = st.button("🚀 Process Mission Video", use_container_width=True, type="primary")
     if process_btn:
         if not active_video_path or not os.path.exists(active_video_path):
@@ -594,9 +624,8 @@ with st.sidebar:
         st.rerun()
 
     st.markdown("---")
-    st.subheader("📥 Mission Data Exports")
+    st.markdown("#### 📥 Mission Data Exports")
     
-    # Priority Queue Excel Export Button in Sidebar
     if features:
         excel_bytes = generate_queue_excel_bytes(features)
         if excel_bytes:
@@ -643,30 +672,30 @@ with col_m1:
     """, unsafe_allow_html=True)
 with col_m2:
     st.markdown(f"""
-    <div class="metric-card">
+    <div class="metric-card card-crit">
         <div class="metric-title">Critical Rescue</div>
         <div class="metric-val crit">{crit_count}</div>
     </div>
     """, unsafe_allow_html=True)
 with col_m3:
     st.markdown(f"""
-    <div class="metric-card">
+    <div class="metric-card card-mod">
         <div class="metric-title">Moderate Search</div>
         <div class="metric-val mod">{mod_count}</div>
     </div>
     """, unsafe_allow_html=True)
 with col_m4:
     st.markdown(f"""
-    <div class="metric-card">
+    <div class="metric-card card-dedup">
         <div class="metric-title">Deduplication Ratio</div>
-        <div class="metric-val" style="color: #16a34a;">{dedup_pct:.1f}%</div>
+        <div class="metric-val" style="color: #059669;">{dedup_pct:.1f}%</div>
     </div>
     """, unsafe_allow_html=True)
 with col_m5:
     st.markdown(f"""
-    <div class="metric-card">
+    <div class="metric-card card-lat">
         <div class="metric-title">Mean Frame Latency</div>
-        <div class="metric-val">{mean_lat:.1f} ms</div>
+        <div class="metric-val" style="color: #4f46e5;">{mean_lat:.1f} ms</div>
     </div>
     """, unsafe_allow_html=True)
 
@@ -687,7 +716,7 @@ else:
 
 
 with map_col:
-    st.subheader("🛰️ MapTiler Satellite Operational Map")
+    st.markdown('<div class="section-header">🛰️ MapTiler Satellite Operational Map</div>', unsafe_allow_html=True)
 
     # Create Folium Map with MapTiler Hybrid Satellite Basemap
     sar_map = folium.Map(
@@ -727,8 +756,8 @@ with map_col:
             color=circle_color,
             fill=True,
             fill_color=circle_color,
-            fill_opacity=0.2,
-            weight=1.5,
+            fill_opacity=0.25,
+            weight=2,
             tooltip=f"Survivor #{t_id} Error Radius: ±{err_m}m"
         ).add_to(sar_map)
 
@@ -769,9 +798,9 @@ with map_col:
 
     # Queue Table & Direct Excel Download
     st.markdown("---")
-    q_col1, q_col2 = st.columns([1.4, 1.0])
+    q_col1, q_col2 = st.columns([1.3, 1.0])
     with q_col1:
-        st.subheader("📋 Survivor Priority Queue")
+        st.markdown('<div class="section-header">📋 Survivor Priority Queue</div>', unsafe_allow_html=True)
     with q_col2:
         if features:
             excel_data = generate_queue_excel_bytes(features)
@@ -804,7 +833,7 @@ with map_col:
 
 
 with inspect_col:
-    st.subheader("🔍 Survivor Inspector View")
+    st.markdown('<div class="section-header">🔍 Survivor Inspector View</div>', unsafe_allow_html=True)
 
     if features:
         # Survivor Selection
@@ -832,7 +861,7 @@ with inspect_col:
         # ---------------------------------------------------------------------
         # THREE INTERACTIVE DISPLAY TOGGLES
         # ---------------------------------------------------------------------
-        st.markdown("**Display Overlays & Verification Toggles:**")
+        st.markdown("<div style='font-weight:700; font-size:13px; color:#334155; margin-bottom:6px;'>Display Overlays & Verification Toggles:</div>", unsafe_allow_html=True)
         toggle_col1, toggle_col2, toggle_col3 = st.columns(3)
         with toggle_col1:
             show_bboxes = st.checkbox("Show bounding boxes", value=True)
@@ -887,7 +916,7 @@ with inspect_col:
         # INCIDENT COMMANDER ACTION STATION & RAPID DISPATCH
         # ---------------------------------------------------------------------
         st.markdown("<br/>", unsafe_allow_html=True)
-        st.markdown("### 🚁 Incident Commander Tactical Dispatch Station")
+        st.markdown('<div class="section-header">🚁 Incident Commander Tactical Dispatch Station</div>', unsafe_allow_html=True)
         
         act_col1, act_col2 = st.columns(2)
         with act_col1:
