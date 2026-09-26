@@ -3,11 +3,13 @@ app.py
 ======
 Mission-Grade Incident Commander Dashboard for Drone Search and Rescue (SAR).
 Features:
+- Light, High-Contrast Command Center Theme
 - Dual-Stream Video Ingestion (RGB + Thermal) with local staging in data/uploads/
 - MapTiler Hybrid Satellite Basemap integration
 - Full-Resolution Original Frame rendering (No blurred crops)
 - Three interactive inspector toggles: [Show bounding boxes], [Show telemetry], [Show tracking IDs]
-- Recommender-Only Safety Guardrail enforcement and Ground Team Dispatch actions
+- Excel (.xlsx) & GeoJSON / KML Data Exports
+- Instant Rapid Rescue Team Dispatch with Live Google Maps & GPS Transmission
 """
 
 import os
@@ -15,24 +17,31 @@ import sys
 import json
 import time
 import math
-
-# Ensure project root (d:\SEC) is on sys.path
-PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-if PROJECT_ROOT not in sys.path:
-    sys.path.insert(0, PROJECT_ROOT)
-
-import cv2
+import io
+import pandas as pd
 import numpy as np
+import cv2
 from PIL import Image, ImageDraw, ImageFont
 import streamlit as st
 import folium
 from folium.plugins import BeautifyIcon
 from streamlit_folium import st_folium
 
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass
+
+# Ensure project root is on sys.path
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+if PROJECT_ROOT not in sys.path:
+    sys.path.insert(0, PROJECT_ROOT)
+
 from run_mission_pipeline import run_mission
 
 # -----------------------------------------------------------------------------
-# 1. PAGE CONFIG & DARK COMMAND THEME
+# 1. PAGE CONFIG & MODERN LIGHT COMMAND THEME
 # -----------------------------------------------------------------------------
 st.set_page_config(
     page_title="AI Drone SAR Mission Commander",
@@ -41,69 +50,164 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Custom High-Tech Dark SAR Styling
+# Custom Crisp Light SAR Command Styling
 st.markdown("""
 <style>
-    .main { background-color: #0b0f19; }
-    
-    /* Top Safety Banner */
-    .safety-banner {
-        background: linear-gradient(90deg, #7f1d1d, #b91c1c);
-        color: #ffffff;
-        padding: 12px 20px;
-        border-radius: 8px;
-        font-weight: 700;
-        font-size: 13px;
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        margin-bottom: 18px;
-        box-shadow: 0 4px 14px rgba(185, 28, 28, 0.35);
-        border: 1px solid #f87171;
+    /* Main Background & Text */
+    .stApp, .main {
+        background-color: #f8fafc !important;
+        color: #0f172a !important;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     }
     
-    /* Metrics Header Cards */
+    /* Sidebar Styling */
+    [data-testid="stSidebar"] {
+        background-color: #ffffff !important;
+        border-right: 1px solid #e2e8f0;
+    }
+    [data-testid="stSidebar"] h1, [data-testid="stSidebar"] h2, [data-testid="stSidebar"] h3 {
+        color: #0f172a !important;
+    }
+    
+    /* Suppress Uploader 200MB text & small helper labels */
+    [data-testid="stFileUploader"] small,
+    [data-testid="stFileUploaderHelp"],
+    div[data-testid="stFileUploadDropzone"] small,
+    div[data-testid="stFileUploader"] section small,
+    div[data-testid="stFileUploader"] span small {
+        display: none !important;
+    }
+
+    /* Light Metrics Header Cards */
     .metric-card {
-        background: #1e293b;
-        border: 1px solid #334155;
-        border-radius: 10px;
-        padding: 14px 18px;
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        padding: 16px 18px;
         text-align: center;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
-    .metric-title { font-size: 11px; color: #94a3b8; text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; }
-    .metric-val { font-size: 26px; font-weight: 800; color: #38bdf8; }
-    .metric-val.crit { color: #ef4444; }
-    .metric-val.mod { color: #f97316; }
-    .metric-val.low { color: #eab308; }
+    .metric-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    }
+    .metric-title {
+        font-size: 11px;
+        color: #64748b;
+        text-transform: uppercase;
+        font-weight: 700;
+        letter-spacing: 0.6px;
+    }
+    .metric-val {
+        font-size: 28px;
+        font-weight: 800;
+        color: #0284c7;
+        margin-top: 4px;
+    }
+    .metric-val.crit { color: #dc2626; }
+    .metric-val.mod { color: #ea580c; }
+    .metric-val.low { color: #d97706; }
 
     /* Urgency Badges */
-    .badge-critical { background: rgba(239, 68, 68, 0.2); color: #ef4444; border: 1px solid #ef4444; padding: 4px 12px; border-radius: 6px; font-weight: 800; font-size: 12px; }
-    .badge-moderate { background: rgba(249, 115, 22, 0.2); color: #f97316; border: 1px solid #f97316; padding: 4px 12px; border-radius: 6px; font-weight: 800; font-size: 12px; }
-    .badge-low { background: rgba(234, 179, 8, 0.2); color: #eab308; border: 1px solid #eab308; padding: 4px 12px; border-radius: 6px; font-weight: 800; font-size: 12px; }
-
-    /* Telemetry HUD Card */
-    .telemetry-hud {
-        background: rgba(15, 23, 42, 0.95);
-        border: 1px solid #0284c7;
-        border-radius: 10px;
-        padding: 14px 18px;
-        margin-top: 12px;
-        box-shadow: 0 0 15px rgba(2, 132, 199, 0.2);
+    .badge-critical {
+        background: rgba(220, 38, 38, 0.12);
+        color: #dc2626;
+        border: 1px solid #fca5a5;
+        padding: 4px 12px;
+        border-radius: 6px;
+        font-weight: 800;
+        font-size: 12px;
     }
-    .hud-title { font-size: 12px; font-weight: 700; color: #38bdf8; text-transform: uppercase; margin-bottom: 8px; }
-    .hud-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 12px; }
-    .hud-item { background: #1e293b; padding: 6px 10px; border-radius: 6px; border: 1px solid #334155; }
-    .hud-label { color: #94a3b8; font-size: 10px; text-transform: uppercase; }
-    .hud-value { font-weight: 700; color: #f8fafc; }
+    .badge-moderate {
+        background: rgba(234, 88, 12, 0.12);
+        color: #ea580c;
+        border: 1px solid #fdba74;
+        padding: 4px 12px;
+        border-radius: 6px;
+        font-weight: 800;
+        font-size: 12px;
+    }
+    .badge-low {
+        background: rgba(217, 119, 6, 0.12);
+        color: #d97706;
+        border: 1px solid #fde68a;
+        padding: 4px 12px;
+        border-radius: 6px;
+        font-weight: 800;
+        font-size: 12px;
+    }
+
+    /* Light Telemetry HUD Card */
+    .telemetry-hud {
+        background: #ffffff;
+        border: 1px solid #bae6fd;
+        border-radius: 12px;
+        padding: 16px 20px;
+        margin-top: 14px;
+        box-shadow: 0 4px 14px rgba(2, 132, 199, 0.08);
+    }
+    .hud-title {
+        font-size: 13px;
+        font-weight: 700;
+        color: #0369a1;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 12px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    .hud-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        font-size: 12px;
+    }
+    .hud-item {
+        background: #f8fafc;
+        padding: 8px 12px;
+        border-radius: 8px;
+        border: 1px solid #e2e8f0;
+    }
+    .hud-label {
+        color: #64748b;
+        font-size: 10px;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+    .hud-value {
+        font-weight: 700;
+        color: #0f172a;
+        margin-top: 2px;
+    }
+
+    /* Rapid Rescue Dispatch Transmission Card */
+    .dispatch-card {
+        background: linear-gradient(135deg, #f0fdf4, #eff6ff);
+        border: 1.5px solid #4ade80;
+        border-radius: 12px;
+        padding: 16px 20px;
+        margin-top: 14px;
+        box-shadow: 0 4px 16px rgba(22, 163, 74, 0.12);
+    }
+    .dispatch-title {
+        color: #15803d;
+        font-weight: 800;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 8px;
+    }
+    .dispatch-body {
+        color: #1e293b;
+        font-size: 13px;
+        line-height: 1.6;
+    }
 </style>
 """, unsafe_allow_html=True)
 
-
-try:
-    from dotenv import load_dotenv
-    load_dotenv()
-except ImportError:
-    pass
 
 # -----------------------------------------------------------------------------
 # 2. FILE DIRECTORIES & MAPTILER CONFIG
@@ -157,6 +261,39 @@ def load_mission_metrics():
         return {}
 
 
+def generate_queue_excel_bytes(features_list):
+    """Generates an in-memory Excel spreadsheet (.xlsx) of the Survivor Priority Queue."""
+    if not features_list:
+        return None
+    rows = []
+    for feat in features_list:
+        p = feat["properties"]
+        coords = feat["geometry"]["coordinates"]
+        rows.append({
+            "Track ID": p.get("track_id"),
+            "Class": p.get("class_name", "human").upper(),
+            "Triage Score": round(float(p.get("triage_score", 0.0)), 3),
+            "Urgency Level": p.get("urgency_level", "LOW_PRIORITY"),
+            "Movement Status": p.get("status", "STATIONARY"),
+            "Latitude": coords[1],
+            "Longitude": coords[0],
+            "GPS Coordinates": f"{coords[1]:.6f}, {coords[0]:.6f}",
+            "Estimated Error (m)": p.get("error_radius_m", 2.0),
+            "Thermal Delta (°C)": p.get("thermal_delta_c", "N/A"),
+            "Detection Confidence": f"{int(p.get('confidence', 0.9) * 100)}%",
+            "Observation Duration (Frames)": p.get("hits_count", 1)
+        })
+    df = pd.DataFrame(rows)
+    output = io.BytesIO()
+    try:
+        with pd.ExcelWriter(output, engine="openpyxl") as writer:
+            df.to_excel(writer, index=False, sheet_name="Survivor_Priority_Queue")
+        return output.getvalue()
+    except Exception:
+        # Fallback to CSV bytes if openpyxl fails
+        return df.to_csv(index=False).encode('utf-8')
+
+
 def render_dynamic_full_frame(
     full_frame_path: str,
     raw_crop_path: str,
@@ -176,9 +313,9 @@ def render_dynamic_full_frame(
     if not os.path.exists(img_path):
         # Fallback placeholder
         blank = np.zeros((720, 1280, 3), dtype=np.uint8)
-        blank[:] = (30, 40, 50)
+        blank[:] = (245, 247, 250)
         cv2.putText(blank, f"Track #{track_id} ({class_name.upper()})", (50, 360),
-                    cv2.FONT_HERSHEY_SIMPLEX, 1.2, (255, 255, 255), 2)
+                    cv2.FONT_HERSHEY_SIMPLEX, 1.2, (30, 41, 59), 2)
         return Image.fromarray(blank)
 
     # Read original pristine image
@@ -198,11 +335,11 @@ def render_dynamic_full_frame(
 
     # Determine color
     if urgency_level == "CRITICAL_RESCUE":
-        box_color = (239, 68, 68)      # RGB Red
+        box_color = (220, 38, 38)      # RGB Red
     elif urgency_level == "MODERATE_SEARCH":
-        box_color = (249, 115, 22)     # RGB Orange
+        box_color = (234, 88, 12)      # RGB Orange
     else:
-        box_color = (234, 179, 8)      # RGB Yellow
+        box_color = (217, 119, 6)      # RGB Amber
 
     # Extract box coordinates
     if crop_bbox and len(crop_bbox) == 4:
@@ -242,6 +379,9 @@ def render_dynamic_full_frame(
 # -----------------------------------------------------------------------------
 if "selected_track_id" not in st.session_state:
     st.session_state.selected_track_id = None
+
+if "last_dispatched_track" not in st.session_state:
+    st.session_state.last_dispatched_track = None
 
 features = load_survivor_geojson()
 metrics = load_mission_metrics()
@@ -332,12 +472,26 @@ with st.sidebar:
         with open(METRICS_JSON_PATH, "w", encoding="utf-8") as f:
             json.dump({"total_video_frames": 0, "processed_frames": 0, "mean_latency_ms": 0.0, "total_unique_survivor_tracks": 0, "deduplication_ratio_pct": 0.0}, f, indent=2)
         st.session_state.selected_track_id = None
+        st.session_state.last_dispatched_track = None
         st.success("Mission Queue and evidence cleared!")
         time.sleep(0.5)
         st.rerun()
 
     st.markdown("---")
     st.subheader("📥 Mission Data Exports")
+    
+    # Priority Queue Excel Export Button in Sidebar
+    if features:
+        excel_bytes = generate_queue_excel_bytes(features)
+        if excel_bytes:
+            st.download_button(
+                "📊 Download Queue (Excel .xlsx)",
+                data=excel_bytes,
+                file_name="survivor_priority_queue.xlsx",
+                mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                use_container_width=True
+            )
+
     if os.path.exists(GEOJSON_PATH):
         with open(GEOJSON_PATH, "r", encoding="utf-8") as f:
             st.download_button(
@@ -359,18 +513,9 @@ with st.sidebar:
 
 
 # -----------------------------------------------------------------------------
-# 6. TOP SAFETY BANNER & PERFORMANCE METRICS
+# 6. PERFORMANCE & OPERATIONAL METRICS CARDS
 # -----------------------------------------------------------------------------
-st.markdown("""
-<div class="safety-banner">
-    <span style="font-size: 20px;">🚨</span>
-    <span><b>RECOMMENDER SYSTEM ONLY:</b> Automated search area closure is strictly disabled per safety protocol. All tactical dispatches require explicit Human Incident Commander authorization.</span>
-</div>
-""", unsafe_allow_html=True)
-
 dedup_pct = metrics.get("deduplication_ratio_pct", 0.0)
-raw_sightings = metrics.get("total_raw_sightings", total_detected)
-dup_suppressed = metrics.get("duplicates_suppressed", 0)
 
 col_m1, col_m2, col_m3, col_m4, col_m5 = st.columns(5)
 with col_m1:
@@ -398,7 +543,7 @@ with col_m4:
     st.markdown(f"""
     <div class="metric-card">
         <div class="metric-title">Deduplication Ratio</div>
-        <div class="metric-val" style="color: #4ade80;">{dedup_pct:.1f}%</div>
+        <div class="metric-val" style="color: #16a34a;">{dedup_pct:.1f}%</div>
     </div>
     """, unsafe_allow_html=True)
 with col_m5:
@@ -448,15 +593,15 @@ with map_col:
         # Pin Colors
         if urg == "CRITICAL_RESCUE":
             marker_color = "red"
-            circle_color = "#ef4444"
+            circle_color = "#dc2626"
             icon_name = "heartbeat"
         elif urg == "MODERATE_SEARCH":
             marker_color = "orange"
-            circle_color = "#f97316"
+            circle_color = "#ea580c"
             icon_name = "user"
         else:
             marker_color = "cadetblue"
-            circle_color = "#eab308"
+            circle_color = "#d97706"
             icon_name = "info-sign"
 
         # Uncertainty Circle
@@ -467,23 +612,26 @@ with map_col:
             fill=True,
             fill_color=circle_color,
             fill_opacity=0.2,
-            weight=1,
+            weight=1.5,
             tooltip=f"Survivor #{t_id} Error Radius: ±{err_m}m"
         ).add_to(sar_map)
 
         # Marker Pin
         popup_html = f"""
-        <div style="font-family:sans-serif; width:180px;">
-            <h4 style="margin:0 0 6px 0;">Survivor #{t_id}</h4>
+        <div style="font-family:sans-serif; width:190px; color:#0f172a;">
+            <h4 style="margin:0 0 6px 0; color:#0284c7;">Survivor #{t_id}</h4>
             <b>Urgency:</b> {urg}<br/>
             <b>GPS:</b> {lat:.6f}, {lon:.6f}<br/>
             <b>Score:</b> {props.get('triage_score', 0.0):.3f}<br/>
             <b>Status:</b> {props.get('status', 'STATIONARY')}<br/>
+            <div style="margin-top:8px;">
+                <a href="https://www.google.com/maps/dir/?api=1&destination={lat:.6f},{lon:.6f}" target="_blank" style="display:inline-block; background:#0284c7; color:#ffffff; padding:4px 8px; border-radius:4px; text-decoration:none; font-size:11px; font-weight:bold;">🗺️ Google Maps Nav</a>
+            </div>
         </div>
         """
         folium.Marker(
             location=[lat, lon],
-            popup=folium.Popup(popup_html, max_width=240),
+            popup=folium.Popup(popup_html, max_width=250),
             tooltip=f"Track #{t_id} [{urg}]",
             icon=folium.Icon(color=marker_color, icon=icon_name, prefix="fa" if icon_name in ("heartbeat", "user") else "glyphicon")
         ).add_to(sar_map)
@@ -503,9 +651,23 @@ with map_col:
             )
             st.session_state.selected_track_id = closest_feat["properties"].get("track_id")
 
-    # Queue Table
+    # Queue Table & Direct Excel Download
     st.markdown("---")
-    st.subheader("📋 Survivor Priority Queue")
+    q_col1, q_col2 = st.columns([1.4, 1.0])
+    with q_col1:
+        st.subheader("📋 Survivor Priority Queue")
+    with q_col2:
+        if features:
+            excel_data = generate_queue_excel_bytes(features)
+            if excel_data:
+                st.download_button(
+                    "📊 Download Priority Queue (.xlsx)",
+                    data=excel_data,
+                    file_name="survivor_priority_queue.xlsx",
+                    mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                    use_container_width=True
+                )
+
     if features:
         table_data = []
         for f in features:
@@ -522,7 +684,7 @@ with map_col:
             })
         st.dataframe(table_data, use_container_width=True, hide_index=True)
     else:
-        st.info("📋 Survivor Priority Queue is empty. Active survivor targets will appear here once video is processed.")
+        st.info("📋 Survivor Priority Queue is empty. Process a drone mission video to populate active rescue targets.")
 
 
 with inspect_col:
@@ -546,6 +708,10 @@ with inspect_col:
         selected_feature = next(f for f in features if f["properties"]["track_id"] == selected_track_id)
         props = selected_feature["properties"]
         coords = selected_feature["geometry"]["coordinates"]
+        lat = coords[1]
+        lon = coords[0]
+        urg_level = props.get("urgency_level", "LOW_PRIORITY")
+        err_m = props.get("error_radius_m", 2.5)
 
         # ---------------------------------------------------------------------
         # THREE INTERACTIVE DISPLAY TOGGLES
@@ -565,7 +731,6 @@ with inspect_col:
         full_frame_path = props.get("full_frame_path", "").replace("\\", "/")
         raw_crop_path = props.get("raw_crop_path", "").replace("\\", "/")
         crop_bbox = props.get("crop_bbox", [])
-        urg_level = props.get("urgency_level", "LOW_PRIORITY")
 
         display_image = render_dynamic_full_frame(
             full_frame_path=full_frame_path,
@@ -590,10 +755,10 @@ with inspect_col:
             <div class="telemetry-hud">
                 <div class="hud-title">📡 Aligned UAV Flight Telemetry & Raycasting Solution</div>
                 <div class="hud-grid">
-                    <div class="hud-item"><div class="hud-label">Drone GPS Position</div><div class="hud-value">{coords[1]:.6f}° N, {coords[0]:.6f}° E</div></div>
+                    <div class="hud-item"><div class="hud-label">Survivor GPS Position</div><div class="hud-value">{lat:.6f}° N, {lon:.6f}° E</div></div>
                     <div class="hud-item"><div class="hud-label">Flight Altitude (AGL)</div><div class="hud-value">50.0 meters</div></div>
                     <div class="hud-item"><div class="hud-label">Gimbal Attitude (P/R/Y)</div><div class="hud-value">-75.0° / 0.0° / 45.0°</div></div>
-                    <div class="hud-item"><div class="hud-label">Estimated Error Radius</div><div class="hud-value">±{props.get('error_radius_m', 2.5):.2f} meters</div></div>
+                    <div class="hud-item"><div class="hud-label">Estimated Error Radius</div><div class="hud-value">±{err_m:.2f} meters</div></div>
                     <div class="hud-item"><div class="hud-label">Movement Status</div><div class="hud-value">{props.get('status', 'STATIONARY')}</div></div>
                     <div class="hud-item"><div class="hud-label">Body Heat Contrast (ΔT)</div><div class="hud-value">{f"+{props.get('thermal_delta_c')}°C" if props.get('thermal_delta_c') else 'N/A (Optical)'}</div></div>
                     <div class="hud-item"><div class="hud-label">Detection Confidence</div><div class="hud-value">{int(props.get('confidence', 0.9)*100)}%</div></div>
@@ -603,18 +768,46 @@ with inspect_col:
             """, unsafe_allow_html=True)
 
         # ---------------------------------------------------------------------
-        # INCIDENT COMMANDER ACTION STATION
+        # INCIDENT COMMANDER ACTION STATION & RAPID DISPATCH
         # ---------------------------------------------------------------------
         st.markdown("<br/>", unsafe_allow_html=True)
-        st.markdown("### 🚁 Incident Commander Action Station")
+        st.markdown("### 🚁 Incident Commander Tactical Dispatch Station")
         
         act_col1, act_col2 = st.columns(2)
         with act_col1:
             if st.button("🚀 Dispatch Rapid Rescue Team", use_container_width=True, type="primary"):
-                st.success(f"Ground Rescue Team Dispatched to Survivor #{selected_track_id} at ({coords[1]:.6f}, {coords[0]:.6f})!")
+                st.session_state.last_dispatched_track = selected_track_id
         with act_col2:
             if st.button("🛰️ Flag for Secondary Drone Scan", use_container_width=True):
                 st.info(f"Target #{selected_track_id} flagged for close-range optical/thermal drone flyover.")
+
+        # Show Live Dispatch & Map Transmission Card
+        if st.session_state.last_dispatched_track == selected_track_id:
+            gmaps_nav_url = f"https://www.google.com/maps/dir/?api=1&destination={lat:.6f},{lon:.6f}"
+            gmaps_pin_url = f"https://www.google.com/maps?q={lat:.6f},{lon:.6f}"
+            osm_url = f"https://www.openstreetmap.org/?mlat={lat:.6f}&mlon={lon:.6f}#map=19/{lat:.6f}/{lon:.6f}"
+            whatsapp_text = f"🚨 URGENT RESCUE DISPATCH: Survivor #{selected_track_id} [{urg_level}] at GPS Coordinates: {lat:.6f}, {lon:.6f} (Error: ±{err_m}m). Direct Navigation: {gmaps_nav_url}"
+            whatsapp_url = f"https://api.whatsapp.com/send?text={whatsapp_text.replace(' ', '+')}"
+
+            st.markdown(f"""
+            <div class="dispatch-card">
+                <div class="dispatch-title">
+                    <span>✅ DISPATCH ORDER ACTIVE: Survivor #{selected_track_id}</span>
+                </div>
+                <div class="dispatch-body">
+                    <b>Target Classification:</b> {props.get('class_name', 'human').upper()} ({urg_level})<br/>
+                    <b>Exact GPS Coordinates:</b> <span style="font-family:monospace; font-weight:bold; color:#0369a1;">{lat:.6f}° N, {lon:.6f}° E</span> (Accuracy: ±{err_m}m)<br/>
+                    <b>Triage Urgency Score:</b> {props.get('triage_score', 0.0):.3f} • <b>Status:</b> {props.get('status', 'STATIONARY')}<br/>
+                    <b>Transmission Timestamp:</b> {time.strftime('%Y-%m-%d %H:%M:%S UTC', time.gmtime())}
+                </div>
+            </div>
+            """, unsafe_allow_html=True)
+
+            link_col1, link_col2 = st.columns(2)
+            with link_col1:
+                st.link_button("🗺️ Open Google Maps Navigation", gmaps_nav_url, use_container_width=True)
+            with link_col2:
+                st.link_button("📲 Share GPS via WhatsApp", whatsapp_url, use_container_width=True)
 
     else:
         st.info("No survivor sightings available. Click 'Process Mission Video' in the sidebar to begin.")
