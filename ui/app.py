@@ -549,7 +549,7 @@ mean_lat = metrics.get("mean_latency_ms", 44.89)
 # -----------------------------------------------------------------------------
 with st.sidebar:
     st.image("https://img.icons8.com/fluency/96/drone.png", width=64)
-    st.title("SAR Mission Ingest")
+    st.title("EagleVision")
     st.caption("Autonomous 4K RGB-Thermal Disaster Vision Pipeline")
     st.markdown("---")
 
