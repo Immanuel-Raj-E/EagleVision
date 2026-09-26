@@ -108,50 +108,56 @@ st.markdown("""
         gap: 8px;
     }
 
-    /* Complete Suppression of Uploader Limit Text (200MB / 1GB per file...) */
-    [data-testid="stFileUploaderInstructions"],
-    [data-testid="stFileUploaderDropzoneInstructions"],
+    /* Only hide the tiny helper limit text */
     [data-testid="stFileUploader"] small,
-    [data-testid="stFileUploaderHelp"],
-    [data-testid="stFileUploader"] div:has(> small),
-    [data-testid="stFileUploadDropzone"] small,
-    [data-testid="stFileUploadDropzone"] span:last-child,
-    div[data-testid="stFileUploader"] section small,
-    div[data-testid="stFileUploader"] section span:nth-child(2),
-    div[data-testid="stFileUploader"] span small {
+    [data-testid="stFileUploaderHelp"] {
         display: none !important;
-        height: 0px !important;
-        font-size: 0px !important;
-        opacity: 0 !important;
-        visibility: hidden !important;
-        line-height: 0 !important;
-        margin: 0 !important;
-        padding: 0 !important;
     }
 
-    /* Highlighted File Uploader Dropzone */
+    /* 4-Sided Highlighted File Uploader Dropzone */
     section[data-testid="stFileUploadDropzone"] {
-        background-color: #f8fafc !important;
-        border: 2px dashed #94a3b8 !important;
-        border-radius: 10px !important;
-        padding: 14px 10px !important;
-        transition: all 0.2s ease-in-out;
+        background-color: #ffffff !important;
+        border: 2px dashed #0284c7 !important;
+        border-radius: 12px !important;
+        padding: 18px 14px !important;
+        text-align: center !important;
+        box-shadow: 0 2px 10px rgba(2, 132, 199, 0.08) !important;
+        transition: all 0.2s ease-in-out !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 6px !important;
     }
     section[data-testid="stFileUploadDropzone"]:hover {
-        border-color: #0284c7 !important;
+        border: 2px solid #0369a1 !important;
         background-color: #f0f9ff !important;
-        box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.12);
-    }
-    section[data-testid="stFileUploadDropzone"] * {
-        color: #1e293b !important;
+        box-shadow: 0 0 0 4px rgba(2, 132, 199, 0.18), 0 4px 14px rgba(2, 132, 199, 0.12) !important;
     }
     section[data-testid="stFileUploadDropzone"] button {
         background: linear-gradient(135deg, #0284c7, #0369a1) !important;
         color: #ffffff !important;
         border: none !important;
-        border-radius: 6px !important;
+        border-radius: 8px !important;
+        padding: 8px 18px !important;
         font-weight: 700 !important;
-        box-shadow: 0 2px 6px rgba(2, 132, 199, 0.25) !important;
+        font-size: 13px !important;
+        box-shadow: 0 2px 8px rgba(2, 132, 199, 0.25) !important;
+        display: inline-block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    section[data-testid="stFileUploadDropzone"] button:hover {
+        background: linear-gradient(135deg, #0369a1, #075985) !important;
+        transform: translateY(-1px) !important;
+    }
+    section[data-testid="stFileUploadDropzone"] span {
+        color: #334155 !important;
+        font-weight: 600 !important;
+        font-size: 12px !important;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
     }
 
     /* High-Contrast Selectbox / Dropdown & Hover Overlay Protection */
