@@ -3,7 +3,8 @@ app.py
 ======
 Mission-Grade Incident Commander Dashboard for Drone Search and Rescue (SAR).
 Features:
-- Light, High-Contrast Command Center Theme
+- High-Contrast Light Theme with Full Element Visibility
+- Unified Dropdown / Overlay / Selectbox Contrast Protection
 - Dual-Stream Video Ingestion (RGB + Thermal) with local staging in data/uploads/
 - MapTiler Hybrid Satellite Basemap integration
 - Full-Resolution Original Frame rendering (No blurred crops)
@@ -50,32 +51,126 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Custom Crisp Light SAR Command Styling
+# Custom High-Contrast Light SAR Command Styling
 st.markdown("""
 <style>
-    /* Main Background & Text */
-    .stApp, .main {
+    /* Global Base */
+    html, body, [class*="css"] {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+    
+    .stApp, .main, [data-testid="stAppViewContainer"] {
         background-color: #f8fafc !important;
         color: #0f172a !important;
-        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     }
     
-    /* Sidebar Styling */
+    /* Top Header Bar */
+    header[data-testid="stHeader"] {
+        background-color: #f8fafc !important;
+        border-bottom: 1px solid #e2e8f0;
+    }
+    
+    /* Sidebar Styling & Text Contrast */
     [data-testid="stSidebar"] {
         background-color: #ffffff !important;
-        border-right: 1px solid #e2e8f0;
+        border-right: 1px solid #e2e8f0 !important;
     }
-    [data-testid="stSidebar"] h1, [data-testid="stSidebar"] h2, [data-testid="stSidebar"] h3 {
+    [data-testid="stSidebar"] h1, 
+    [data-testid="stSidebar"] h2, 
+    [data-testid="stSidebar"] h3,
+    [data-testid="stSidebar"] h4 {
         color: #0f172a !important;
+        font-weight: 800 !important;
     }
-    
+    [data-testid="stSidebar"] p,
+    [data-testid="stSidebar"] label,
+    [data-testid="stSidebar"] div,
+    [data-testid="stSidebar"] span {
+        color: #1e293b !important;
+    }
+    [data-testid="stSidebar"] .stCaption,
+    [data-testid="stSidebar"] [data-testid="stCaptionContainer"] {
+        color: #64748b !important;
+    }
+
     /* Suppress Uploader 200MB text & small helper labels */
     [data-testid="stFileUploader"] small,
     [data-testid="stFileUploaderHelp"],
     div[data-testid="stFileUploadDropzone"] small,
+    div[data-testid="stFileUploadDropzone"] span:last-child,
     div[data-testid="stFileUploader"] section small,
     div[data-testid="stFileUploader"] span small {
         display: none !important;
+    }
+
+    /* File Uploader Dropzone Styling */
+    section[data-testid="stFileUploadDropzone"] {
+        background-color: #f8fafc !important;
+        border: 2px dashed #cbd5e1 !important;
+        border-radius: 10px !important;
+        padding: 16px 12px !important;
+    }
+    section[data-testid="stFileUploadDropzone"]:hover {
+        border-color: #0284c7 !important;
+        background-color: #f0f9ff !important;
+    }
+    section[data-testid="stFileUploadDropzone"] * {
+        color: #1e293b !important;
+    }
+    section[data-testid="stFileUploadDropzone"] button {
+        background-color: #0284c7 !important;
+        color: #ffffff !important;
+        border: none !important;
+        border-radius: 6px !important;
+        font-weight: 600 !important;
+    }
+
+    /* High-Contrast Selectbox / Dropdown & Hover Overlay Protection */
+    div[data-baseweb="select"] > div {
+        background-color: #ffffff !important;
+        border: 1.5px solid #cbd5e1 !important;
+        border-radius: 8px !important;
+        color: #0f172a !important;
+        font-weight: 600 !important;
+    }
+    div[data-baseweb="select"] span,
+    div[data-baseweb="select"] div {
+        color: #0f172a !important;
+    }
+    div[data-baseweb="select"]:hover > div {
+        border-color: #0284c7 !important;
+        box-shadow: 0 0 0 1px #0284c7 !important;
+    }
+    
+    /* Popover & Dropdown Options Menu */
+    div[data-baseweb="popover"],
+    div[data-baseweb="popover"] > div,
+    ul[role="listbox"] {
+        background-color: #ffffff !important;
+        border: 1px solid #cbd5e1 !important;
+        border-radius: 8px !important;
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.12), 0 8px 10px -6px rgba(0, 0, 0, 0.08) !important;
+    }
+    li[role="option"] {
+        background-color: #ffffff !important;
+        color: #0f172a !important;
+        padding: 10px 14px !important;
+        font-size: 13px !important;
+        font-weight: 600 !important;
+        border-bottom: 1px solid #f1f5f9;
+    }
+    li[role="option"]:hover,
+    li[role="option"][aria-selected="true"] {
+        background-color: #e0f2fe !important;
+        color: #0369a1 !important;
+    }
+
+    /* Checkbox Labels */
+    [data-testid="stCheckbox"] label,
+    [data-testid="stCheckbox"] span {
+        color: #0f172a !important;
+        font-weight: 600 !important;
+        font-size: 13px !important;
     }
 
     /* Light Metrics Header Cards */
@@ -205,6 +300,28 @@ st.markdown("""
         font-size: 13px;
         line-height: 1.6;
     }
+
+    /* Buttons Styling */
+    button[data-testid="baseButton-primary"] {
+        background: linear-gradient(135deg, #ef4444, #dc2626) !important;
+        color: #ffffff !important;
+        border: none !important;
+        border-radius: 8px !important;
+        font-weight: 700 !important;
+        box-shadow: 0 4px 12px rgba(220, 38, 38, 0.25) !important;
+    }
+    button[data-testid="baseButton-secondary"] {
+        background-color: #ffffff !important;
+        color: #0f172a !important;
+        border: 1.5px solid #cbd5e1 !important;
+        border-radius: 8px !important;
+        font-weight: 600 !important;
+    }
+    button[data-testid="baseButton-secondary"]:hover {
+        border-color: #0284c7 !important;
+        color: #0284c7 !important;
+        background-color: #f0f9ff !important;
+    }
 </style>
 """, unsafe_allow_html=True)
 
@@ -290,7 +407,6 @@ def generate_queue_excel_bytes(features_list):
             df.to_excel(writer, index=False, sheet_name="Survivor_Priority_Queue")
         return output.getvalue()
     except Exception:
-        # Fallback to CSV bytes if openpyxl fails
         return df.to_csv(index=False).encode('utf-8')
 
 
